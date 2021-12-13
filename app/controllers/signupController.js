@@ -2,7 +2,7 @@ const validator = require("validator");
 
 class SignupController {
   index(req, res) {
-    res.render("signup");
+    res.render("signup", {});
   }
 
   validateUsername(username, password, mobilephone, usertype) {
@@ -53,7 +53,6 @@ class SignupController {
       console.error(e, e.stack);
       return false;
     }
-
     return true;
   }
 }

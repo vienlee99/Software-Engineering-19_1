@@ -1,6 +1,12 @@
 class SigninController {
   index(req, res) {
-    res.render("signin");
+    // res.render("signin", {
+    //   cssP: () => "nav",
+    //   navP: () => "nav",
+    //   footerP: () => "footer",
+    //   scriptsP: () => "scripts",
+    // });
+    res.render("signin", {});
   }
 
   async signin(req, res) {
@@ -19,3 +25,5 @@ class SigninController {
     } else return false;
   }
 }
+
+module.exports = new SigninController();

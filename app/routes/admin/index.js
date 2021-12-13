@@ -1,10 +1,10 @@
-const route = require("express").Router(),
+const router = require("express").Router(),
   dashboard = require("./dashboard"),
   search = require("./search"),
   statistic = require("./statistic");
 
-route.get("/", dashboard);
-route.get("/search", search);
-route.get("/statistic", statistic);
+router.get("/search", search);
+router.get("/statistic", statistic);
+router.get("/", dashboard);
 
-module.exports = route;
+module.exports = router;

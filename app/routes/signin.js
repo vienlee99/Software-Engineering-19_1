@@ -1,10 +1,10 @@
-const route = require("express").Router(),
+const router = require("express").Router(),
   signinController = require("../controllers/signinController");
 
-route.get("/", (req, res) => {
+router.get("/", (req, res) => {
   signinController.index(req, res);
 });
-route.post("/", (req, res) => {
+router.post("/", (req, res) => {
   if (signinController.login(req, res)) {
     res.redirect("../");
   } else {
@@ -12,4 +12,4 @@ route.post("/", (req, res) => {
   }
 });
 
-module.exports = route;
+module.exports = router;

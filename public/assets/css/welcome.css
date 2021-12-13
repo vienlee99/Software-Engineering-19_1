@@ -1,0 +1,53 @@
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css");
+
+.heading {
+  font-size: 1.8em;
+  font-weight: 350;
+  line-height: 1.2;
+}
+
+.slick-prev {
+  position: absolute;
+  display: block;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  left: -60px;
+  top: calc(50% - 24px);
+}
+
+.slick-next {
+  position: absolute;
+  display: block;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  right: -60px;
+  top: calc(50% - 24px);
+}
+
+.carousel-cards {
+  position: relative;
+}
+/* 
+#poster {
+  background-image: url("../images/poster.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 50em;
+  width: 100%;
+  margin-bottom: 2em;
+}
+
+#poster-textbox {
+  position: absolute;
+  top: 200px;
+  left: 150px;
+  width: 400px;
+  height: 250px;
+  background-color: whitesmoke;
+} */

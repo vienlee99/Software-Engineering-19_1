@@ -19,19 +19,18 @@ app.use(
 //
 
 // template engine
+app.set("views", "./public/app/views");
 const hbs = exhbs.create({
   defaultLayout: "main-layout",
   extname: "hbs",
 });
 app.engine("hbs", hbs.engine);
-npm;
 app.set("view engine", "hbs");
-app.set("views", "./views");
 
 const { listen } = require("express/lib/application");
 // route
-const route = require("./routes");
-route(app);
+const route = require("./app/routes");
+app.use(route);
 
 // app listen
 app.listen(port, () => {

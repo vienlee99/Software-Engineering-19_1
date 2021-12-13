@@ -1,34 +1,32 @@
-const welcome = require("./welcome"),
+const router = require("express").Router(),
+  welcome = require("./welcome"),
   signin = require("./signin"),
   signup = require("./signup"),
   admin = require("./admin"),
   student = require("./student"),
   teacher = require("./teacher");
 
-function route(app) {
+router.use(function (req, res, next) {
   if (!req.session.user) {
-    // anonymous user
-    app.use("/", welcome);
-    app.use("/signin", signin);
-    app.use("/signup", signup);
+    router.use("/", welcome);
+    router.use("/signin", signin);
+    router.use("/signup", signup);
   } else {
-    // loged-in
-    app.use("/.*", function (req, res, next) {
-      switch (req.session.user.usertype) {
-        case "admin":
-          app.use(admin);
-          break;
-        case "student":
-          app.use(student);
-          break;
-        case "teacher":
-          app.use(teacher);
-          break;
-        default:
-          break;
-      }
-    });
+    switch (req.session.user.usertype) {
+      case "admin":
+        router.use(admin);
+        break;
+      case "student":
+        router.use(student);
+        break;
+      case "teacher":
+        router.use(teacher);
+        break;
+      default:
+        break;
+    }
   }
-}
+  next();
+});
 
-module.exports = route;
+module.exports = router;
