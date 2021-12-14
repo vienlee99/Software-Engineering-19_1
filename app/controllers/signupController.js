@@ -2,7 +2,11 @@ const validator = require("validator");
 
 class SignupController {
   index(req, res) {
-    res.render("signup", {});
+    res.render("signup", {
+      layout: "blank-layout",
+      css: "signup",
+      js: "signup",
+    });
   }
 
   validateUsername(username, password, mobilephone, usertype) {
