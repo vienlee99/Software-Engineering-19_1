@@ -84,7 +84,7 @@
   border-radius: 10px;
 }
 
-.col-field > button {
+.col-field > form > button {
   background: #7f7fd5;
   border: none;
 
@@ -99,6 +99,10 @@
   margin-left: 15rem;
   margin-top: 3.5rem;
   width: 10rem;
+}
+
+.line-checkbox {
+  margin-left: 1.5rem;
 }
 
 .title-1 {

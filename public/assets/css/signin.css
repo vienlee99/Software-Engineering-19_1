@@ -18,6 +18,7 @@
 .col-signin {
   margin-top: 15rem;
   width: 20rem;
+  max-width: 30rem;
 }
 
 .col-signin > p {
@@ -71,20 +72,29 @@
   color: rgba(0, 0, 0, 0.54);
 }
 
-/* ~~~~~~~~~~~~~~~~~~~~~ col-2 ~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~ col-1 ~~~~~~~~~~~~~~~~~~~~~ */
 
 .line-field {
   width: 30rem;
   margin-bottom: 1.6rem;
   height: 3rem;
   border-radius: 10px;
+  margin-bottom: 2.25rem;
 }
 
 .line-field > * {
   border-radius: 10px;
 }
 
-.col-field > button {
+.col-field {
+  margin-left: 15rem;
+  margin-top: 3.5rem;
+  width: 30rem;
+  max-width: 30rem;
+  margin-right: 8rem;
+}
+
+.col-field > form > button {
   background: #7f7fd5;
   border: none;
 
@@ -95,10 +105,9 @@
   text-align: center;
   color: #ffffff;
 }
-.col-field {
-  margin-left: 15rem;
-  margin-top: 3.5rem;
-  width: 10rem;
+
+.line-checkbox {
+  margin-left: 1.5rem;
 }
 
 .title-1 {
@@ -107,7 +116,7 @@
   font-size: 4rem;
   line-height: 5rem;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .caption-1 {
@@ -116,5 +125,5 @@
   font-size: 1.5em;
   line-height: 1.9rem;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
 }
