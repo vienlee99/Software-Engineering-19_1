@@ -4,8 +4,7 @@ class SignupController {
   index(req, res) {
     res.render("signup", {
       layout: "blank-layout",
-      css: "signup",
-      js: "signup",
+      path: req.originalUrl.split("?").shift(),
     });
   }
 

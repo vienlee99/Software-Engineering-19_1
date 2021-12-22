@@ -2,8 +2,7 @@ class SigninController {
   index(req, res) {
     res.render("signin", {
       layout: "blank-layout",
-      css: "signin",
-      js: "signin",
+      path: req.originalUrl.split("?").shift(),
     });
   }
 

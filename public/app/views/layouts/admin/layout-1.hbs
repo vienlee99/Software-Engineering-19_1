@@ -7,23 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{{title}}}</title>
     {{> css/bootstrap}}
-    {{> css/main-css}}
+
+    <link rel="stylesheet" href="/assets/css/admin/sidebar.css">
     <link rel="stylesheet" href="/assets/css{{path}}.css">
 
 </head>
 
 <body>
-    <div id="main-content" class="container-fluid">
-        <div class="row">
-            <div class="col-md">
-                {{{body}}}
-            </div>
-        </div>
-    </div>
+    {{> admin/sidebar}}
+    {{{body}}}
 
     {{> js/jquery}}
     <script src="/assets/js{{path}}.js"></script>
-
 </body>
 
 </html>

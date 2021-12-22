@@ -1,0 +1,44 @@
+.sidebar {
+  position: absolute;
+  width: 5rem;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: #fdfdff;
+
+  border-right: 1px solid #ebebeb;
+  box-sizing: border-box;
+}
+
+.sidebar > .container{
+  position: relative;
+}
+
+.sidebar ul {
+  position: absolute;
+  width: 6rem;
+  height: 183.86px;
+  left: 0px;
+  top: 15rem;
+}
+
+.logo-mini {
+  position: absolute;
+  top: 2.2rem;
+  width: 55px;
+  height: 46.55px;
+
+  background: url("/assets/images/logo-mini.png");
+}
+
+.sidebar .icon-choose {
+  /* margin-left: -16px;  */
+  position: absolute;
+  left: 0;
+  height: 2.7rem;
+  transform: translateY(-0.5rem);
+}
+
+.nav-link {
+  padding: 1rem 1.5rem;
+}

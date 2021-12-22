@@ -1,0 +1,228 @@
+/* @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+  font-family: Roboto, sans-serif;
+}
+
+#chart {
+  max-width: 650px;
+  margin: 35px auto;
+} */
+/* asdasdas */
+
+@font-face {
+  font-family: Sansation;
+  src: url("/assets/fonts/Sansation_Bold.ttf");
+  font-weight: bold;
+}
+
+body {
+  background-image: url("../images/background.png");
+  background-size: 100vw 100vh;
+  background-repeat: no-repeat;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sec-title {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.sec-title > h1 {
+  font-family: Sansation;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 85px;
+  line-height: 107px;
+
+  color: #4f4f4f;
+}
+
+.sec-title > h2 {
+  margin-top: 1.5rem;
+  font-family: Sansation;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 54px;
+
+  color: #4f4f4f;
+}
+
+.box {
+  background: #ffffff;
+  box-shadow: 0px 15px 50px rgba(160, 163, 189, 0.25);
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+#sec-1 > .row {
+  height: 17vh;
+}
+
+.icon-1 {
+  position: absolute;
+  top: 50%; /* position the top  edge of the element at the middle of the parent */
+  transform: translate(0, -50%);
+  left: 1.2rem;
+}
+
+.group-1 > h1 {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: #171717;
+}
+
+.group-1 {
+  position: absolute;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #b9b9b9;
+  top: 1.2rem;
+  left: 6rem;
+}
+
+.group-2 {
+  position: absolute;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #b9b9b9;
+}
+
+#group-2-1 {
+  top: 1.2rem;
+  left: 2rem;
+}
+
+#group-2-2 {
+  top: 1.2rem;
+  right: 16rem;
+}
+
+#group-2-3 {
+  top: 1.2rem;
+  right: 2rem;
+}
+
+.group-2-2 > h1 {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.group-2-2 > p {
+  margin-bottom: 0.5rem;
+}
+
+.group-2 > h1 {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: #171717;
+}
+
+#sec-2 {
+  margin-top: 3vh;
+  height: 40vh;
+  width: 100%;
+  padding: 0;
+}
+
+#sec-2 canvas {
+  position: absolute;
+  left: 3%;
+  top: 25%;
+
+  width: 94% !important;
+  height: 75% !important;
+}
+
+#sec-3 {
+  height: 100%;
+}
+
+#sec-3 > .box {
+  padding: 1.25rem 2rem;
+}
+
+#sec-3 .table {
+  padding: 0.5rem 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.group-3 {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #b9b9b9;
+  position: relative;
+  padding-top: 0.6rem !important;
+  padding-bottom: 0.7rem !important;
+}
+
+.group-3 > h1 {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: #171717;
+  display: inline-block;
+  margin-top: 0rem;
+}
+
+.group-3 > p {
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+.group-3 span {
+  position: absolute;
+  right: 10px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 120%;
+  transform: translateY(8px);
+  /* or 14px */
+
+  letter-spacing: -0.4px;
+
+  color: #000000;
+}
+
+#sec-3 .table h1 {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 120%;
+  letter-spacing: -0.4px;
+  color: #171717;
+  display: inline-block;
+}
+
+.table > :not(:first-child) {
+  border-top: 2px solid #eeeeee;
+}
