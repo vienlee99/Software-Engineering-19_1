@@ -1,1 +1,4 @@
-const saltRounds = 10;
+module.exports = ()=>{
+
+    const saltRounds = 10;
+}

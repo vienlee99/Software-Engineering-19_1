@@ -1,7 +1,6 @@
 const express = require("express"),
   app = express(),
   port = 8000,
-  exhbs = require("express-handlebars"),
   session = require("express-session");
 
 // app use
@@ -18,24 +17,17 @@ app.use(
 );
 //
 
-// template engine
+// config
 app.set("views", "./public/app/views");
-const hbs = exhbs.create({
-  defaultLayout: "main-layout",
-  extname: "hbs",
-  helpers: {
-    ifStr(s1, s2, options) {
-      return s1 == s2 ? options.fn(this) : options.inverse(this);
-    },
-  },
-});
-app.engine("hbs", hbs.engine);
-app.set("view engine", "hbs");
+require("./app/config/templateEngine.config")(app);
+require("./app/config/database.config")();
+require("./app/config/security.config")();
 
-const { listen } = require("express/lib/application");
 // route
 const route = require("./app/routes");
 app.use(route);
+
+
 
 // app listen
 app.listen(port, () => {
