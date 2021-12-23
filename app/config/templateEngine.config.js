@@ -12,5 +12,4 @@ module.exports = (app) => {
   });
   app.engine("hbs", hbs.engine);
   app.set("view engine", "hbs");
-  console.log('dfssssssssssssssssssssssssssssssss')
 };

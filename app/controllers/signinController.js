@@ -1,4 +1,6 @@
 const User = require('../models/userModel');
+const bcrypt = require('bcrypt');
+const saltRounds = require('../../app/config/security.config').saltRounds;
 
 class SigninController {
   index(req, res) {
@@ -9,22 +11,30 @@ class SigninController {
   }
 
   async signin(req, res) {
-    let username = req.body.user;
-    let password = req.password;
+    let username = req.body.username;
+    let password = req.body.password;
     if (!username || !password) return false;
 
-    password = await bcrypt.hash(password, saltRounds);
+    // password = await bcrypt.hash(password, saltRounds);
+    // password = bcrypt.hash(password, saltRounds);
 
-    let user = await User.find({
+    console.log(username);
+    console.log(password);
+
+    let users = await User.find({
       username: username,
       password: password,
     });
-
-    if (user.length === 1) {
-      req.session.user = user;
+       
+    if (users.length === 1) {
+      req.session.user = users[0];
+      req.session.save();
       return true;
-    } else return false;
+    } else {
+      return false;
+    }
   }
 }
 
 module.exports = new SigninController();
+

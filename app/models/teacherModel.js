@@ -40,6 +40,17 @@ const TeacherSchema = new mongoose.Schema({
   degree: {
     type: Number,
   },
+  courseId: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "courses",
+    },
+  ],
+  userId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "users",
+    required: true,
+  },
 });
 
 const TeacherModel = mongoose.model("Teacher", TeacherSchema);

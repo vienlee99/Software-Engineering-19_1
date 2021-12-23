@@ -4,15 +4,16 @@ class WelcomeController {
     //   layout: "admin/layout-1",
     //   path: '/test',
     //   where: 'home',
-    // res.render("welcome", {
-    //   layout: "anonymous-layout",
-    //   path: "/welcome",
-    // });
-    res.render("teacher/test", {
-      layout: "teacher/layout-1",
-      path: "test",
-      where: "home",
+    console.log('nzzzzzzzzzzzzzzzzz')
+    res.render("welcome", {
+      layout: "anonymous-layout",
+      path: "/welcome",
     });
+    // res.render("teacher/test", {
+    //   layout: "teacher/layout-1",
+    //   path: "test",
+    //   where: "home",
+    // });
   }
 }
 module.exports = new WelcomeController();

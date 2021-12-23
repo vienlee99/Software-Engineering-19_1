@@ -6,38 +6,82 @@ const router = require("express").Router(),
   student = require("./student"),
   teacher = require("./teacher");
 
-router.use(function (req, res, next) {
-  // if (!req.session.user) {
-  //   router.use("/", welcome);
-  //   router.use("/signin", signin);
-  //   router.use("/signup", signup);
-  // } else {
-  //   switch (req.session.user.usertype) {
-  //     case "admin":
-  //       router.use(admin);
-  //       break;
-  //     case "student":
-  //       router.use(student);
-  //       break;
-  //     case "teacher":
-  //       router.use(teacher);
-  //       break;
-  //     default:
-  //       break;
-  //   }
-  // }
-  // next();
-
-  router.use("/", welcome);
-  router.use("/signin", signin);
-  router.use("/signup", signup);
-  router.use("/admin",admin);
-
-  router.use("/student",student);
-
-  router.use("/teacher",teacher);
-
-  next();
+router.use(["/signin", "/signup"], function (req, res, next) {
+  if (!req.session.user) next();
+  console.log("ccccccccccccc");
 });
+
+router.use("/signin", signin);
+router.use("/signup", signup);
+
+router.use(
+  "/",
+  function (req, res, next) {
+    if (!req.session.user) next();
+    else {
+      next("route");
+      console.log("bbbbbbbbbbbbbb");
+    }
+  },
+  welcome
+);
+
+router.use(
+  "/",
+  function (req, res, next) {
+    next();
+    console.log("ccccc");
+    // if (req.session.user.typeUserId === 0) next();
+    // else next("route");
+    console.log("ccccc");
+  },
+  admin
+);
+
+router.use(
+  "/",
+  function (req, res, next) {
+    if (req.session.user.typeUserId === 1) next();
+    else next("route");
+  },
+  student
+);
+router.use(
+  "/",
+  function (req, res, next) {
+    if (req.session.user.typeUserId === 2) next();
+    else next("route");
+  },
+  teacher
+);
+
+// switch (req.session.user.typeUserId) {
+//   case 0:
+//     console.log("hello!admin");
+//     router.use("/:admin", admin);
+//     break;
+//   case 1:
+//     console.log("hello!student");
+//     router.use(student);
+//     break;
+//   case 2:
+//     console.log("hello!teacher");
+//     router.use(teacher);
+//     break;
+//   default:
+//     break;
+// }
+// next();
+
+// router.use("/", welcome);
+// router.use("/signin", signin);
+// router.use("/signup", signup);
+// router.use("/admin",admin);
+
+// router.use("/student",student);
+
+// router.use("/teacher",teacher);
+
+// next();
 
 module.exports = router;

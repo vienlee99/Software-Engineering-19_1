@@ -1,14 +1,16 @@
 const TypeUser = require("../models/typeUserModel");
 const mongoose = require("mongoose");
 
+const userModel = require('../models/userModel')
+
 module.exports = () => {
   (async function connect() {
     try {
-      await mongoose.connect("mongodb://localhost:27017/testdbs", {
+      await mongoose.connect("mongodb://localhost:27017/HTVcorpDB", {
         useNewUrlParser: true,
         useUnifiedTopology: true,
       });
-      console.log("success!");
+
     } catch (error) {
       console.log("fail!");
     }
