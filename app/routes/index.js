@@ -33,9 +33,9 @@ router.use(function (req, res, next) {
   router.use("/signup", signup);
   router.use("/admin",admin);
 
-  router.use(student);
+  router.use("/student",student);
 
-  router.use(teacher);
+  router.use("/teacher",teacher);
 
   next();
 });
