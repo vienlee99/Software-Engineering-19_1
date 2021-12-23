@@ -1,3 +1,4 @@
+const User = require('../models/userModel');
 const validator = require("validator");
 
 class SignupController {
@@ -24,10 +25,10 @@ class SignupController {
   }
 
   async signup(req, res) {
-    var username = req.body.user;
-    var password = req.body.password;
-    var mobilephone = req.body.mobilephone;
-    var usertype = req.body.usertype;
+    let username = req.body.user;
+    let password = req.body.password;
+    let mobilephone = req.body.mobilephone;
+    let usertype = req.body.usertype;
 
     if (!username || !password || !mobilephone) return false;
     if (!validateUsername(username, password, mobilephone, usertype))
@@ -43,6 +44,8 @@ class SignupController {
     }
 
     if (user.length != 0) return false;
+
+    password = await bcrypt.hash(password, saltRounds);
 
     try {
       let user = await User.create({

@@ -26,7 +26,6 @@ router.use(function (req, res, next) {
         break;
     }
   }
-  next();
 });
 
 module.exports = router;

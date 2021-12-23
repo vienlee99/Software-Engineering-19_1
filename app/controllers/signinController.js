@@ -1,3 +1,5 @@
+const User = require('../models/userModel');
+
 class SigninController {
   index(req, res) {
     res.render("signin", {
@@ -7,9 +9,11 @@ class SigninController {
   }
 
   async signin(req, res) {
-    var username = req.body.user;
-    var password = req.password;
+    let username = req.body.user;
+    let password = req.password;
     if (!username || !password) return false;
+
+    password = await bcrypt.hash(password, saltRounds);
 
     let user = await User.find({
       username: username,
