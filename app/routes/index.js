@@ -7,25 +7,37 @@ const router = require("express").Router(),
   teacher = require("./teacher");
 
 router.use(function (req, res, next) {
-  if (!req.session.user) {
-    router.use("/", welcome);
-    router.use("/signin", signin);
-    router.use("/signup", signup);
-  } else {
-    switch (req.session.user.usertype) {
-      case "admin":
-        router.use(admin);
-        break;
-      case "student":
-        router.use(student);
-        break;
-      case "teacher":
-        router.use(teacher);
-        break;
-      default:
-        break;
-    }
-  }
+  // if (!req.session.user) {
+  //   router.use("/", welcome);
+  //   router.use("/signin", signin);
+  //   router.use("/signup", signup);
+  // } else {
+  //   switch (req.session.user.usertype) {
+  //     case "admin":
+  //       router.use(admin);
+  //       break;
+  //     case "student":
+  //       router.use(student);
+  //       break;
+  //     case "teacher":
+  //       router.use(teacher);
+  //       break;
+  //     default:
+  //       break;
+  //   }
+  // }
+  // next();
+
+  router.use("/", welcome);
+  router.use("/signin", signin);
+  router.use("/signup", signup);
+  router.use("/admin",admin);
+
+  router.use(student);
+
+  router.use(teacher);
+
+  next();
 });
 
 module.exports = router;
