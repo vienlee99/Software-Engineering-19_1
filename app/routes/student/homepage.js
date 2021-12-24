@@ -1,11 +1,11 @@
 const router = require("express").Router();
-//   signinController = require("../controllers/signinController");
+homepageController = require("../../controllers/student/homepage");
 
-// router.get("/", (req, res) => {
-//   signinController.index(req, res);
-// });
+router.get("/", (req, res) => {
+    homepageController.index(req, res);
+});
 // router.post("/", (req, res) => {
-//   if (signinController.login(req, res)) {
+//   if (homepageController.login(req, res)) {
 //     res.redirect("../");
 //   } else {
 //     res.redirect("/");

@@ -3,6 +3,7 @@ class SearchController {
       res.render("search", {
         layout: "admin/layout1",
         path: req.originalUrl.split("?").shift(),
+        where:'search'
       });
     }
   }

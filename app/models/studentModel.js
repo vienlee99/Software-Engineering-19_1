@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const StudentSchema = new mongoose.Schema({
   _id: {
@@ -13,7 +13,7 @@ const StudentSchema = new mongoose.Schema({
   },
   age: {
     type: Number,
-    required: true
+    required: true,
   },
   phoneNum: {
     type: String,
@@ -26,8 +26,17 @@ const StudentSchema = new mongoose.Schema({
     maxlength: 45,
     trim: true,
   },
+  courseId: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "courses",
+  }],
+  userId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "users",
+    required: true,
+  },
 });
 
-const StudentModel = mongoose.model('Student', StudentSchema);
+const StudentModel = mongoose.model("Student", StudentSchema);
 
 module.exports = StudentModel;

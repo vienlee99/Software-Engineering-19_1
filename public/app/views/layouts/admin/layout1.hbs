@@ -9,7 +9,25 @@
     {{> css/bootstrap}}
 
     <link rel="stylesheet" href="/assets/css/admin/sidebar.css">
-    <link rel="stylesheet" href="/assets/css/admin/{{path}}.css">
+    <link rel="stylesheet" href="/assets/css/admin{{path}}.css">
+    <link rel="stylesheet" href="/assets/css/admin{{path}}.css">
+
+    <style>
+        @font-face {
+            font-family: Sansation;
+            src: url("/assets/fonts/Sansation_Bold.ttf");
+            font-weight: bold;
+        }
+
+        body {
+            background-image: url("/assets/images/background.png");
+            background-size: 100vw 100vh;
+            background-repeat: no-repeat;
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+    </style>
 
 </head>
 
@@ -18,7 +36,7 @@
     {{{body}}}
 
     {{> js/jquery}}
-    <script src="/assets/js/admin/{{path}}.js"></script>
+    <script src="/assets/js/admin{{path}}.js"></script>
 </body>
 
 </html>

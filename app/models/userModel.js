@@ -16,13 +16,26 @@ const UserSchema = new mongoose.Schema({
     required: true,
     maxlength: 45,
   },
-  remainningBalance: {
-    type: Number,
-    default: 0,
+  teacherId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "students",
   },
-  imagePath: {
-    type: String,
+  studentId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "students",
   },
+  typeuserId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "typeusers",
+    required: true,
+  },
+  // remainningBalance: {
+  //   type: Number,
+  //   default: 0,
+  // },
+  // imagePath: {
+  //   type: String,
+  // },
 });
 
 const UserModel = mongoose.model("User", UserSchema);
