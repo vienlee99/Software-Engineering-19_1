@@ -3,8 +3,6 @@ const router = require("express").Router(),
   search = require("./search"),
   statistic = require("./statistic");
 
-  console.log('xxxxxxxxxxxxxxxxxxxxxx')
-
 router.get("/", dashboard);
 router.get("/search", search);
 router.get("/statistic", statistic);

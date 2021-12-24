@@ -1,8 +1,8 @@
 class DashboardController {
     index(req, res) {
-      res.render("teacher/test", {
+      res.render("teacher/homepage", {
         layout: "teacher/layout1",
-        path: 'teacher/test',
+        path: '/homepage',
       });
     }
   }

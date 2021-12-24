@@ -4,7 +4,6 @@ class WelcomeController {
     //   layout: "admin/layout-1",
     //   path: '/test',
     //   where: 'home',
-    console.log('nzzzzzzzzzzzzzzzzz')
     res.render("welcome", {
       layout: "anonymous-layout",
       path: "/welcome",

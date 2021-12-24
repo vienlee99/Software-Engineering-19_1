@@ -18,9 +18,6 @@ class SigninController {
     // password = await bcrypt.hash(password, saltRounds);
     // password = bcrypt.hash(password, saltRounds);
 
-    console.log(username);
-    console.log(password);
-
     let users = await User.find({
       username: username,
       password: password,

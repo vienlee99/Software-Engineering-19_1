@@ -12,7 +12,7 @@ module.exports = () => {
       });
 
     } catch (error) {
-      console.log("fail!");
+      console.log(error);
     }
   })();
 
