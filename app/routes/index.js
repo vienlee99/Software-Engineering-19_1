@@ -6,38 +6,51 @@ const router = require("express").Router(),
   student = require("./student"),
   teacher = require("./teacher");
 
+// zzzzzzzzzzzzzzzzz Bỏ qua đăng nhập zzzzzzzzzzzzzzz
 router.use(function (req, res, next) {
-  // if (!req.session.user) {
-  //   router.use("/", welcome);
-  //   router.use("/signin", signin);
-  //   router.use("/signup", signup);
-  // } else {
-  //   switch (req.session.user.usertype) {
-  //     case "admin":
-  //       router.use(admin);
-  //       break;
-  //     case "student":
-  //       router.use(student);
-  //       break;
-  //     case "teacher":
-  //       router.use(teacher);
-  //       break;
-  //     default:
-  //       break;
-  //   }
-  // }
-  // next();
-
-  router.use("/", welcome);
-  router.use("/signin", signin);
-  router.use("/signup", signup);
-  router.use("/admin",admin);
-
-  router.use("/student",student);
-
-  router.use("/teacher",teacher);
-
+  req.session.user = {
+    _id: 123,
+    username: "root",
+    password: "123",
+    typeUserId: 0,    // loại người dùng 0-admin 1-teacher 2-student
+  };
   next();
 });
+// zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+
+router.use(["/signin", "/signup"], function (req, res, next) {
+  if (!req.session.user) next();
+});
+
+router.use("/signin", signin);
+router.use("/signup", signup);
+
+var index = welcome;
+
+router.use(
+  "/",
+  function (req, res, next) {
+    if (!req.session.user) {
+      index = welcome;
+    } else {
+      // console.log(req.session.user);
+      switch (req.session.user.typeUserId) {
+        case 0:
+          index = Object.assign(index, admin);
+          break;
+        case 1:
+          index = Object.assign(index, teacher);
+          break;
+        case 2:
+          index = Object.assign(index, student);
+          break;
+        default:
+          break;
+      }
+    }
+    next();
+  },
+  index
+);
 
 module.exports = router;

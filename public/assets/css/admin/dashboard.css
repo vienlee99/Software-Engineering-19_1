@@ -1,17 +1,4 @@
-@font-face {
-  font-family: Sansation;
-  src: url("/assets/fonts/Sansation_Bold.ttf");
-  font-weight: bold;
-}
 
-body {
-  background-image: url("../images/background.png");
-  background-size: 100vw 100vh;
-  background-repeat: no-repeat;
-  margin: 0;
-  height: 100vh;
-  overflow: hidden;
-}
 
 .sec-title {
   text-align: center;

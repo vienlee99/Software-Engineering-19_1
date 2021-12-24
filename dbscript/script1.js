@@ -1,5 +1,7 @@
+// mongo localhost:27017/HTVcorpDB ./dbscript/script1.js
 
-use HTVcorpDB
+conn = new Mongo();
+db = conn.getDB("HTVcorpDB");
 
 db.createCollection("Course")
 db.createCollection("Student")
@@ -13,6 +15,3 @@ db.User.insert({
     password: '123'
 })
 
-// Open mongosh and ...
-// load("script1.js")
-// mongo localhost:27017/HTVcorpDB script1.js

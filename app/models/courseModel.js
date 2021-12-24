@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const CourseSchema = new mongoose.Schema({
   _id: {
@@ -12,7 +12,7 @@ const CourseSchema = new mongoose.Schema({
   },
   cost: {
     type: Number,
-    required: true
+    required: true,
   },
   dateStart: {
     type: Date,
@@ -21,18 +21,27 @@ const CourseSchema = new mongoose.Schema({
   },
   dateEnd: {
     type: Date,
-    required: true
+    required: true,
   },
   numberOfStudent: {
     type: Number,
-    required: true
+    required: true,
   },
   deadDateEnroll: {
     type: Date,
-    required: true
+    required: true,
+  },
+
+  studentId: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "teachers",
+  }],
+  teacherId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "students",
   },
 });
 
-const CourseModel = mongoose.model('Course', CourseSchema);
+const CourseModel = mongoose.model("Course", CourseSchema);
 
 module.exports = CourseModel;
