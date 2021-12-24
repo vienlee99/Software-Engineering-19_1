@@ -1,4 +1,4 @@
-// mongo localhost:27017/HTVcorpDB ./dbscript/script1.js
+// mongo localhost:27017 ./dbscript/script1.js
 
 conn = new Mongo();
 db = conn.getDB("HTVcorpDB");
