@@ -1,4 +1,4 @@
-const User = require('../models/userModel');
+const User = require("../models/userModel");
 const validator = require("validator");
 
 class SignupController {
@@ -34,6 +34,7 @@ class SignupController {
     if (!validateUsername(username, password, mobilephone, usertype))
       return false;
 
+    let user;
     try {
       let user = await User.find({
         $or: [{ username: username }, { mobilephone: mobilephone }],
