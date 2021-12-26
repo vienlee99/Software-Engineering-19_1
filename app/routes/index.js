@@ -12,7 +12,7 @@ router.use(function (req, res, next) {
     _id: 123,
     username: "root",
     password: "123",
-    typeUserId: 0,    // loại người dùng 0-admin 1-teacher 2-student
+    typeUserId: 2, // loại người dùng 0-admin 1-teacher 2-student
   };
   next();
 });

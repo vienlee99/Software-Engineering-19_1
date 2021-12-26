@@ -2,7 +2,8 @@ const router = require("express").Router();
 homepageController = require("../../controllers/student/homepage");
 
 router.get("/", (req, res) => {
-    homepageController.index(req, res);
+  console.log("sdfsdfsd");
+  homepageController.index(req, res);
 });
 // router.post("/", (req, res) => {
 //   if (homepageController.login(req, res)) {
