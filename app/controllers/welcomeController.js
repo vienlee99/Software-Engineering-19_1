@@ -9,7 +9,7 @@ class WelcomeController {
     //   path: "/welcome",
     // });
     res.render("teacher/test", {
-      layout: "teacher/layout1",
+      layout: "teacher/teacher_layout",
       path: "test",
       where: "home",
     });

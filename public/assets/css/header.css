@@ -1,0 +1,16 @@
+nav {
+    box-shadow: 0 5px 10px #acacac;
+    margin-bottom: 10000px;
+    background-color: transparent;
+    z-index: 1;
+    position: fixed !important;
+    width: 100%;
+    padding: 0.4rem 1rem !important;
+    /* height: ; */
+    background-color: black;
+  }
+
+  .teacher-header{
+      margin-bottom: 80px;
+  }
+  

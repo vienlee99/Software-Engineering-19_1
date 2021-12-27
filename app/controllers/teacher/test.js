@@ -1,7 +1,7 @@
 class DashboardController {
     index(req, res) {
       res.render("teacher/test", {
-        layout: "teacher/layout1",
+        layout: "teacher/teacher_layout",
         path: 'teacher/test',
       });
     }

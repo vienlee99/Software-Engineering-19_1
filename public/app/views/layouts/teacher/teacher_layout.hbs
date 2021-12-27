@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{{title}}}</title>
+    {{> css/bootstrap}}
+    {{> css/header-css}}
+
+    <link rel="stylesheet" href="../../../../assets/css/teacher.css">
+
+</head>
+
+<body>
+
+    <div class="">
+        <div class="row nav teacher-header">
+            <div class="col-md">
+                {{> teacher/header}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md">
+                {{{body}}}
+            </div>
+        </div>
+        <div class="row py-2" style="margin-top:40px">
+            <div class="col-md">
+                {{> footer}}
+            </div>
+        </div>
+    </div>
+
+    {{> js/jquery}}
+    <script src="/assets/js/teacher/{{path}}.js"></script>
+</body>
+
+</html>
