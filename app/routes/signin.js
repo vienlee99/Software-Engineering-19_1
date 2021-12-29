@@ -8,9 +8,10 @@ router.use("/", function (req, res, next) {
 router.get("/", (req, res) => {
   signinController.index(req, res);
 });
-router.post("/", async (req, res) => {
-  if (await signinController.signin(req, res)) res.redirect("/");
-  else res.redirect("/signin");
+
+router.post("/", (req, res,next) => {
+  signinController.signin(req, res,next); 
 });
+
 
 module.exports = router;

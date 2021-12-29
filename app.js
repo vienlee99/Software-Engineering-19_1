@@ -20,7 +20,9 @@ app.use(
 // config
 app.set("views", "./public/app/views");
 require("./app/config/templateEngine.config")(app);
-require("./app/config/database.config")();
+require("./app/config/database.config").run();
+require("./app/middleware/passport")(app);
+
 
 // route
 const route = require("./app/routes");

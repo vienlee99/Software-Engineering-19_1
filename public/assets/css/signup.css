@@ -71,7 +71,16 @@
   color: rgba(0, 0, 0, 0.54);
 }
 
-/* ~~~~~~~~~~~~~~~~~~~~~ col-2 ~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~ col-1 ~~~~~~~~~~~~~~~~~~~~~ */
+
+select {
+  max-width: 25%;
+  color: #8e8e8e !important;
+}
+
+select > option {
+  text-align: center !important;
+}
 
 .line-field {
   width: 30rem;
