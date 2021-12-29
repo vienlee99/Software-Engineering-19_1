@@ -8,11 +8,12 @@ router.use("/", function (req, res, next) {
 router.get("/", (req, res) => {
   signupController.index(req, res);
 });
-router.post("/", (req, res) => {
-  if (signupController.login(req, res)) {
-    res.redirect("/");
+router.post("/", async (req, res) => {
+  let r = await signupController.signup(req, res);  
+  if (r.result) {
+    return res.redirect("/");
   } else {
-    res.redirect("/");
+    signupController.index(req, res, r.msg);
   }
 });
 

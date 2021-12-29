@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+var AutoIncrement = require('mongoose-sequence')(mongoose);
 
 const TeacherSchema = new mongoose.Schema({
   _id: {
@@ -53,6 +54,7 @@ const TeacherSchema = new mongoose.Schema({
   },
 });
 
+TeacherSchema.plugin(AutoIncrement, {id:'order_seq',inc_field: '_id'});
 const TeacherModel = mongoose.model("Teacher", TeacherSchema);
 
 module.exports = TeacherModel;
