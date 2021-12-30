@@ -2,14 +2,21 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-3">
-                <a href="#">
-                    <button type="button" class="btn btn-primary btn-lg">Upload</button>
-                </a>
+                <h2 style="text-align: center;">Chọn ảnh mô tả khóa học</h2>
                 <form>
                     <div class="form-group">
-                        <label for="exampleFormControlFile1">Example file input</label>
-                        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                        <label for="Image" class="form-label">Ảnh đại diện khóa học</label>
+                        <input class="form-control" type="file" id="formFile" onchange="preview()">
+                        {{!-- <button onclick="clearImage()" class="btn btn-primary mt-3">Xóa ảnh</button> --}}
                     </div>
+                    <img id="frame" src="" class="img-fluid" />
+                    <hr />
+                    <div class="form-group">
+                        <label for="Image" class="form-label">Thêm ảnh mô tả khóa học</label>
+                        <input class="form-control" type="file" id="formFile1" onchange="preview1()">
+                        {{!-- <button onclick="clearImage()" class="btn btn-primary mt-3">Xóa ảnh</button> --}}
+                    </div>
+                    <img id="frame1" src="" class="img-fluid" />
                 </form>
             </div>
 
@@ -26,19 +33,23 @@
                     </div>
                     <div class="form-group">
                         <label for="course-subject" class="label">Lĩnh vực</label>
-                        <input type="text" class="form-control" id="course-subject" placeholder="Lĩnh vực">
+                        <select name="" id="course-subject" class="form-control">
+                            <option value="">Công nghệ</option>
+                            <option value="">Y tế</option>
+                            <option value="">Giáo dục</option>
+                            <option value="">Ngôn ngữ</option>
+                            <option value="">Thiết kế</option>
+                            <option value="">Nhiếp ảnh</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="course-date" class="label">Thứ trong tuần</label>
                         <input type="text" class="form-control" id="course-date" placeholder="Nhập thứ trong tuần">
                     </div>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="rememberMe">
-                        <label class="form-check-label" for="rememberMe">Xác nhận thông tin</label>
-                    </div>
+
                     <div class="btn-setup my-2">
-                        <a href="#" class="btn btn-primary">Tham gia khóa học</a>
-                        <a href="#" class="btn btn-primary btn-tinhtrang">Tình trạng</a>
+                        <a href="#" class="btn btn-primary">Ngày đăng ký cuối cùng</a>
+                        <a href="#" class="btn btn-primary btn-tinhtrang">Ngày khai giảng khóa học</a>
                     </div>
 
                     <div class="form-group">
@@ -46,22 +57,17 @@
                         <textarea class="form-control" id="course-description" rows="3"></textarea>
                     </div>
 
-                    <!-- Example single danger button -->
-                    <div>
+                    <div class="form-group">
                         <label for="course-payment">Phương thức thanh toán</label>
-                        <div class="btn-group" style="width:100%;" id="course-payment">
-                            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false" style="width: 100%;">
-                                Momo
-                            </button>
-                            <div class="dropdown-menu" style="width:100%">
-                                <a class="dropdown-item" href="#">Momo</a>
-                                <a class="dropdown-item" href="#">Zalopay</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Separated link</a>
-                            </div>
-                        </div>
+                        <select name="" id="course-payment" class="form-control">
+                            <option value="">Momo</option>
+                            <option value="">ZaloPay</option>
+                        </select>
+                    </div>
+
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="rememberMe">
+                        <label class="form-check-label" for="rememberMe">Xác nhận thông tin khóa học</label>
                     </div>
 
                     <button type="submit" class="btn btn-success btn-block my-3">Đăng khóa học</button>
