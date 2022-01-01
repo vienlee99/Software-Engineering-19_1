@@ -2,8 +2,7 @@ const router = require("express").Router();
 
 const teacherContrller = require('../../controllers/teacher/teacherController');
 
-router.get('/search', teacherContrller.search);
-router.get('/', teacherContrller.index);
+router.get('/', teacherContrller.edit);
 
 
 module.exports = router;

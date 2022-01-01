@@ -1,37 +1,35 @@
-const User = require('../models/userModel');
-const bcrypt = require('bcrypt');
-const saltRounds = require('../../app/config/security.config').saltRounds;
+const passport = require("passport");
 
 class SigninController {
-  index(req, res) {
+  index(req, res, msg) {
     res.render("signin", {
       layout: "blank-layout",
       path: req.originalUrl.split("?").shift(),
+      msg: msg,
     });
   }
 
-  async signin(req, res) {
-    let username = req.body.username;
-    let password = req.body.password;
-    if (!username || !password) return false;
+  async signin(req, res, next) {
+    passport.authenticate("local", (err, user, info) => {
+      if (err || !user) {
+        return this.index(req, res, "Incorrect username !!");
+      }
 
-    // password = await bcrypt.hash(password, saltRounds);
-    // password = bcrypt.hash(password, saltRounds);
+      req.logIn(user, (err) => {
+        if (err) {
+          return this.index(req, res, "Incorrect password !!");
+        }
 
-    let users = await User.find({
-      username: username,
-      password: password,
-    });
-       
-    if (users.length === 1) {
-      req.session.user = users[0];
-      req.session.save();
-      return true;
-    } else {
-      return false;
-    }
+        req.session.user = user;
+
+        if (req.body.keep === "on") {
+          res.cookie("username", user.Username, { signed: true });
+        }
+
+        return res.redirect('/');
+      });
+    })(req, res, next);
   }
 }
 
 module.exports = new SigninController();
-

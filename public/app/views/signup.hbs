@@ -1,7 +1,7 @@
 <div id='main-container' class="container-fluid">
     <div class="row">
         <div class="col col-field">
-            <form action="">
+            <form action="/signup" method="post">
 
                 <h2 class="title-1">
                     Sign up
@@ -14,16 +14,22 @@
                     <span class="input-group-text" id="addon-wrapping">
                         <img src="/assets/images/username.png" class="icon-input" />
                     </span>
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Recipient's username"
-                        aria-describedby="basic-addon2">
+                    <input name="username" type="text" class="form-control" placeholder="Username"
+                        aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <select class="form-select" name="usertype" style="width: 25%">
+                        <option value="2" selected>Student</option>
+                        <option value="1">Teacher</option>
+                    </select>
+
+                    
                 </div>
                 <div class="input-group line-field shadow">
                     <span class="input-group-text" id="addon-wrapping">
                         <img src="/assets/images/password.png" class="icon-input" />
                     </span>
 
-                    <input type="text" class="form-control" placeholder="Password" aria-label="Recipient's username"
-                        aria-describedby="basic-addon2">
+                    <input name="password" type="text" class="form-control" placeholder="Password"
+                        aria-label="Recipient's username" aria-describedby="basic-addon2">
 
                 </div>
                 <div class="input-group line-field shadow">
@@ -31,7 +37,7 @@
                         <img src="/assets/images/password.png" class="icon-input" />
                     </span>
 
-                    <input type="text" class="form-control" placeholder="Confirm Password"
+                    <input id="confirm-password" type="text" class="form-control" placeholder="Confirm Password"
                         aria-label="Recipient's username" aria-describedby="basic-addon2">
 
                 </div>
@@ -40,15 +46,18 @@
                         <img src="/assets/images/mobilephone.png" class="icon-input" />
                     </span>
 
-                    <input type="text" class="form-control" placeholder="Phone number" aria-label="Recipient's username"
-                        aria-describedby="basic-addon2">
+                    <input name="mobilephone" type="text" class="form-control" placeholder="Phone number"
+                        aria-label="Recipient's username" aria-describedby="basic-addon2">
                 </div>
 
                 <div class="input-group mb-3  line-checkbox ">
-                    <input type="checkbox" aria-label="Checkbox for following text input"
+                    <input type="checkbox" aria-label="Checkbox for following text input" id="agree"
                         style="margin-top: 5px; margin-right: 15px;   transform: scale(1.4);">
                     <p>I agree to HTV Meeting’s Terms of Service</p>
                 </div>
+
+                <p style="color: red;">{{msg}}</p>
+
 
                 <button type="submits" class="btn btn-primary line-field shadow">Sign up</button>
             </form>
