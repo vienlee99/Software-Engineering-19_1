@@ -1,1 +1,78 @@
-<h1>UPLOAD</h1>
+<div class="mt-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <h2 style="text-align: center;">Chọn ảnh mô tả khóa học</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="Image" class="form-label">Ảnh đại diện khóa học</label>
+                        <input class="form-control" type="file" id="formFile" onchange="preview()">
+                        {{!-- <button onclick="clearImage()" class="btn btn-primary mt-3">Xóa ảnh</button> --}}
+                    </div>
+                    <img id="frame" src="" class="img-fluid" />
+                    <hr />
+                    <div class="form-group">
+                        <label for="Image" class="form-label">Thêm ảnh mô tả khóa học</label>
+                        <input class="form-control" type="file" id="formFile1" onchange="preview1()">
+                        {{!-- <button onclick="clearImage()" class="btn btn-primary mt-3">Xóa ảnh</button> --}}
+                    </div>
+                    <img id="frame1" src="" class="img-fluid" />
+                </form>
+            </div>
+
+            <div class="col-lg-9">
+                <form>
+                    <h1 style="text-align: center;">Nhập thông tin khóa học </h1>
+                    <div class="form-group">
+                        <label for="course-name">Tên khóa học</label>
+                        <input type="text" class="form-control" id="course-name" placeholder="Tên khóa học">
+                    </div>
+                    <div class="form-group">
+                        <label for="course-teacher" class="label">Giảng viên</label>
+                        <input type="text" class="form-control" id="course-teacher" placeholder="Giảng viên">
+                    </div>
+                    <div class="form-group">
+                        <label for="course-subject" class="label">Lĩnh vực</label>
+                        <select name="" id="course-subject" class="form-control">
+                            <option value="">Công nghệ</option>
+                            <option value="">Y tế</option>
+                            <option value="">Giáo dục</option>
+                            <option value="">Ngôn ngữ</option>
+                            <option value="">Thiết kế</option>
+                            <option value="">Nhiếp ảnh</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="course-date" class="label">Thứ trong tuần</label>
+                        <input type="text" class="form-control" id="course-date" placeholder="Nhập thứ trong tuần">
+                    </div>
+
+                    <div class="btn-setup my-2">
+                        <a href="#" class="btn btn-primary">Ngày đăng ký cuối cùng</a>
+                        <a href="#" class="btn btn-primary btn-tinhtrang">Ngày khai giảng khóa học</a>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="course-description">Mô tả khóa học</label>
+                        <textarea class="form-control" id="course-description" rows="3"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="course-payment">Phương thức thanh toán</label>
+                        <select name="" id="course-payment" class="form-control">
+                            <option value="">Momo</option>
+                            <option value="">ZaloPay</option>
+                        </select>
+                    </div>
+
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="rememberMe">
+                        <label class="form-check-label" for="rememberMe">Xác nhận thông tin khóa học</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-success btn-block my-3">Đăng khóa học</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
