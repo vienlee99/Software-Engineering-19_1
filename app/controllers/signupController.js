@@ -10,6 +10,8 @@ class SignupController {
       path: req.originalUrl.split("?").shift(),
       msg: msg,
     });
+    this.count += 1;
+    console.log(this.count);
   }
 
   validateUsername(username, password, mobilephone, usertype) {
