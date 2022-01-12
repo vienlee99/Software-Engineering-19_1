@@ -1,8 +1,8 @@
 class SearchController {
     index(req, res) {
-      res.render("search", {
+      res.render("admin/search", {
         layout: "admin/layout1",
-        path: req.originalUrl.split("?").shift(),
+        path: '/search',
         where:'search'
       });
     }

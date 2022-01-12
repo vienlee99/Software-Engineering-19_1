@@ -1,10 +1,27 @@
 <div class="container">
+    <p id="title">
+        Statistics
+    </p>
+    <div id="box-radio">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+                Course
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+            <label class="form-check-label" for="flexRadioDefault2">
+                Teacher
+            </label>
+        </div>
+    </div>
     <div class="sec-title">
-        <h1>DASHBOARD</h1>
-        <h2>by HTV corporation</h2>
+        <h1>Statistics</h1>
+        <button id="btn-stat">statistic</button>
     </div>
 
-    <div id="main-content" class="container">
+    <div id="main-content" class="container" style="display: none;">
         <div class="row">
             <div class="col-8">
                 <div class="row">
@@ -15,7 +32,7 @@
                                     <img src="/assets/images/icon-course.png" alt="" class="icon-1">
                                     <div class="group-1">
                                         <h1>1478 286</h1>
-                                        <p>Total visits</p>
+                                        <p>Total Course</p>
                                         <img src="/assets/images/icon-trending-up.png">
                                         <span>4.07%</span>
                                         <span>&ThinSpace;Last month</span>
@@ -34,17 +51,23 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
-                                <div class="box">
-                                    <img src="/assets/images/icon-teacher.png" alt="" class="icon-1">
-                                    <div class="group-1">
-                                        <h1>1478 286</h1>
-                                        <p>Total visits</p>
-                                        <img src="/assets/images/icon-trending-down.png">
-                                        <span>4.07%</span>
-                                        <span>&ThinSpace;Last month</span>
-                                    </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 3vh;">
+                    <div class="col">
+                        <div id="sec-2" style="height: 27vh;">
+                            <div class="box">
+                                <div id="group-2-1" class="group-2">
+                                    <h1 style="margin-bottom: 0.2rem;">New Courses</h1>
+                                    <p>This year</p>
                                 </div>
+                                <div id="group-2-2" class="group-2 group-2-2">
+                                    <p>This month</p>
+                                    <h1>475 273</h1>
+                                </div>
+                                <canvas id="myChart" style="width:200px ;height:100px"></canvas>
+
 
                             </div>
                         </div>
@@ -52,36 +75,17 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <div id="sec-2">
+                        <div id="sec-4" style="height: 27vh;">
                             <div class="box">
-                                 <div id="group-2-1" class="group-2">
-                                    <h1>Incomme per month</h1>
-                                    <p>May - Oct</p>
+                                <div id="group-2-1" class="group-2">
+                                    <h1>New students</h1>
+                                    <p>This year</p>
                                 </div>
                                 <div id="group-2-2" class="group-2 group-2-2">
                                     <p>This month</p>
                                     <h1>475 273</h1>
                                 </div>
-                                <div id="group-2-3" class="group-2 group-2-2">
-                                    <p>Same period last year</p>
-                                    <h1>225 273</h1>
-                                </div>
-                                <!--
-                                <div class="group-1">
-                                    <h1>1478 286</h1>
-                                    <p>Total visits</p>
-                                    <img src="/assets/images/icon-trending-up.png">
-                                    <span>4.07%</span>
-                                    <span>&ThinSpace;Last month</span>
-                                </div>
-                                <div class="group-1">
-                                    <h1>1478 286</h1>
-                                    <p>Total visits</p>
-                                    <img src="/assets/images/icon-trending-up.png">
-                                    <span>4.07%</span>
-                                    <span>&ThinSpace;Last month</span>
-                                </div> -->
-                                <canvas id="myChart"  style="width:200px ;height:100px"></canvas>
+                                <canvas id="myChart2" style="width:200px ;height:100px"></canvas>
 
 
                             </div>
@@ -90,39 +94,192 @@
                 </div>
             </div>
             <div class="col-4">
-                <div id="sec-3">
-                    <div class="box">
-
-                    <div id="group-3-0" class="group-3">
-                        <h1>Top Subject</h1><br>
-                        <p>28 subjects, 1400 Courses</p>
-                    </div>
-
-                    <div class="table">
-                        <div id="group-3-0" class="group-3">
-                            <h1>Math</h1><span class="tag-count">8.2k</span><br>
-                            <p>Natural science</p><span class="tag-inc">+472</span>
-                        </div>
-                        <div id="group-3-0" class="group-3">
-                            <h1>Physics</h1><span class="tag-count">8.2k</span><br>
-                            <p>Natural science</p><span class="tag-inc">+472</span>
-                        </div>
-                        <div id="group-3-0" class="group-3">
-                            <h1>Chemistry</h1><span class="tag-count">8.2k</span><br>
-                            <p>Natural science</p><span class="tag-inc">+472</span>
-                        </div>
-                        <div id="group-3-0" class="group-3">
-                            <h1>Deep Learning</h1><span class="tag-count">8.2k</span><br>
-                            <p>AI</p><span class="tag-inc">+472</span>
-                        </div>
-                        <div id="group-3-0" class="group-3">
-                            <h1>Machine Learning</h1><span class="tag-count">8.2k</span><br>
-                            <p>AI</p><span class="tag-inc">+472</span>
+                <div class="row">
+                    <div class="col">
+                        <div id="sec-5">
+                            <div class="box">
+                                <img src="/assets/images/icon-teacher.png" alt="" class="icon-1">
+                                <div class="group-1">
+                                    <h1>1478 286</h1>
+                                    <p>Total visits</p>
+                                    <img src="/assets/images/icon-trending-down.png">
+                                    <span>4.07%</span>
+                                    <span>&ThinSpace;Last month</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                </div>
+                <div class="row" style="margin-top: 3vh;">
+                    <div class="col">
 
+                        <div id="sec-3" style="height: 57vh">
+                            <div class="box">
+
+                                <div id="group-3-0" class="group-3">
+                                    <h1>Top Subject</h1><br>
+                                    <p>28 subjects, 1400 Courses</p>
+                                </div>
+
+                                <div class="table">
+                                    <div id="group-3-0" class="group-3">
+                                        <h1>Math</h1><span class="tag-count">8.2k</span><br>
+                                        <p>Natural science</p><span class="tag-inc">+472</span>
+                                    </div>
+                                    <div id="group-3-0" class="group-3">
+                                        <h1>Physics</h1><span class="tag-count">8.2k</span><br>
+                                        <p>Natural science</p><span class="tag-inc">+472</span>
+                                    </div>
+                                    <div id="group-3-0" class="group-3">
+                                        <h1>Chemistry</h1><span class="tag-count">8.2k</span><br>
+                                        <p>Natural science</p><span class="tag-inc">+472</span>
+                                    </div>
+                                    <div id="group-3-0" class="group-3">
+                                        <h1>Deep Learning</h1><span class="tag-count">8.2k</span><br>
+                                        <p>AI</p><span class="tag-inc">+472</span>
+                                    </div>
+                                    <div id="group-3-0" class="group-3">
+                                        <h1>Machine Learning</h1><span class="tag-count">8.2k</span><br>
+                                        <p>AI</p><span class="tag-inc">+472</span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <div id="main-content2" class="container">
+        <div class="row">
+            <div class="col-8">
+                <div class="row">
+                    <div id="sec-1">
+                        <div class="row">
+                            <div class="col">
+                                <div class="box">
+                                    <img src="/assets/images/icon-course.png" alt="" class="icon-1">
+                                    <div class="group-1">
+                                        <h1>1478 286</h1>
+                                        <p>Total Course</p>
+                                        <img src="/assets/images/icon-trending-up.png">
+                                        <span>4.07%</span>
+                                        <span>&ThinSpace;Last month</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="box">
+                                    <img src="/assets/images/icon-student.png" alt="" class="icon-1">
+                                    <div class="group-1">
+                                        <h1>1478 286</h1>
+                                        <p>Total visits</p>
+                                        <img src="/assets/images/icon-trending-up.png">
+                                        <span>4.07%</span>
+                                        <span>&ThinSpace;Last month</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 3vh;">
+                    <div class="col">
+                        <div id="sec-2" style="height: 27vh;">
+                            <div class="box">
+                                <div id="group-2-1" class="group-2">
+                                    <h1 style="margin-bottom: 0.2rem;">New Courses</h1>
+                                    <p>This year</p>
+                                </div>
+                                <div id="group-2-2" class="group-2 group-2-2">
+                                    <p>This month</p>
+                                    <h1>475 273</h1>
+                                </div>
+                                <canvas id="myChart3" style="width:200px ;height:100px"></canvas>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div id="sec-4" style="height: 27vh;">
+                            <div class="box">
+                                <div id="group-2-1" class="group-2">
+                                    <h1>New students</h1>
+                                    <p>This year</p>
+                                </div>
+                                <div id="group-2-2" class="group-2 group-2-2">
+                                    <p>This month</p>
+                                    <h1>475 273</h1>
+                                </div>
+                                <canvas id="myChart4" style="width:200px ;height:100px"></canvas>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="row">
+                    <div class="col">
+                        <div id="sec-5">
+                            <div class="box">
+                                <img src="/assets/images/icon-teacher.png" alt="" class="icon-1">
+                                <div class="group-1">
+                                    <h1>1478 286</h1>
+                                    <p>Total visits</p>
+                                    <img src="/assets/images/icon-trending-down.png">
+                                    <span>4.07%</span>
+                                    <span>&ThinSpace;Last month</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 3vh;">
+                    <div class="col">
+
+                        <div id="sec-3" style="height: 57vh">
+                            <div class="box">
+
+                                <div id="group-3-0" class="group-3">
+                                    <h1>Top Subject</h1><br>
+                                    <p>28 subjects, 1400 Courses</p>
+                                </div>
+
+                                <div class="table">
+                                    <div id="group-3-0" class="group-3">
+                                        <h1>Math</h1><span class="tag-count">8.2k</span><br>
+                                        <p>Natural science</p><span class="tag-inc">+472</span>
+                                    </div>
+                                    <div id="group-3-0" class="group-3">
+                                        <h1>Physics</h1><span class="tag-count">8.2k</span><br>
+                                        <p>Natural science</p><span class="tag-inc">+472</span>
+                                    </div>
+                                    <div id="group-3-0" class="group-3">
+                                        <h1>Chemistry</h1><span class="tag-count">8.2k</span><br>
+                                        <p>Natural science</p><span class="tag-inc">+472</span>
+                                    </div>
+                                    <div id="group-3-0" class="group-3">
+                                        <h1>Deep Learning</h1><span class="tag-count">8.2k</span><br>
+                                        <p>AI</p><span class="tag-inc">+472</span>
+                                    </div>
+                                    <div id="group-3-0" class="group-3">
+                                        <h1>Machine Learning</h1><span class="tag-count">8.2k</span><br>
+                                        <p>AI</p><span class="tag-inc">+472</span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

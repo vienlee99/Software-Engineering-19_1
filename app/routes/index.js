@@ -31,17 +31,17 @@ router.use("/", function (req, res, next) {
   if (!req.session.user) welcome(req, res, next);
   else next();
 });
-router.use("/", function (req, res, next) {
+router.use(function (req, res, next) {
   if (req.session.user && req.session.user.typeuserId === 0)
     admin(req, res, next);
   else next();
 });
-router.use("/", function (req, res, next) {
+router.use(function (req, res, next) {
   if (req.session.user && req.session.user.typeuserId === 1)
     teacher(req, res, next);
   else next();
 });
-router.use("/", function (req, res, next) {
+router.use(function (req, res, next) {
   if (req.session.user && req.session.user.typeuserId === 2)
     student(req, res, next);
   else next();
