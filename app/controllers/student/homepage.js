@@ -1,11 +1,10 @@
-class DashboardController {
-    index(req, res) {
-      res.render("teacher/test", {
-        layout: "teacher/teacher_layout",
-        path: 'teacher/test',
-      });
-    }
+class StudentHomepageController {
+  index(req, res) {
+    res.render("student/homepage", {
+      layout: "student/layout1",
+      path: "/homepage",
+    });
   }
-  
-  module.exports = new DashboardController();
-  
+}
+
+module.exports = new StudentHomepageController();

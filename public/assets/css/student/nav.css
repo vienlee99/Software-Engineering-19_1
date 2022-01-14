@@ -1,0 +1,28 @@
+.dropdown-title-item {
+  display: block;
+  width: 100%;
+  padding: 0.25rem 0.7rem;
+  font-weight: 400;
+  color: #212529;
+  text-align: left;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+}
+
+.dropdown-item {
+  padding: 0.25rem 1.2rem;
+}
+
+nav {
+  box-shadow: 0 5px 10px #acacac;
+  margin-bottom: 2em;
+  background-color: transparent;
+  z-index: 1;
+  position: fixed !important;
+  width: 100%;
+  padding: 0.4rem 1rem !important;
+  /* height: ; */
+}
