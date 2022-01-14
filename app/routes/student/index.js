@@ -1,9 +1,14 @@
 const router = require("express").Router(),
-  homepage = require("./homepage");
-//   search = require("./search"),
-//   statistic = require("./statistic");
-
-router.get("/", homepage);
+  homepage = require("./homepage"),
+  course_detail = require("./course_detail"),
+  courseDetailOfMyCourses = require("./courseDetailOfMyCourses"),
+  myCourses = require("./myCourses"),
+  payment = require("./payment"),
+  rating = require("./rating"),
+  search = require("./search"),
+  signin = require("./signin"),
+  signup = require("./signup");
+router.use("/", homepage);
 // router.get("/search", search);
 // router.get("/statistic", statistic);
 
