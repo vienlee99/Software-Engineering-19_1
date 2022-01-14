@@ -7,15 +7,15 @@ const router = require("express").Router(),
   teacher = require("./teacher");
 
 // zzzzzzzzzzzzzzzzz Bỏ qua đăng nhập zzzzzzzzzzzzzzz
-// router.use(function (req, res, next) {
-//   req.session.user = {
-//     _id: 123,
-//     username: "root",
-//     password: "123",
-//     typeUserId: 0, // loại người dùng 0-admin 1-teacher 2-student
-//   };
-//   next();
-// });
+router.use(function (req, res, next) {
+  req.session.user = {
+    _id: 123,
+    username: "root",
+    password: "123",
+    typeuserId: 2, // loại người dùng 0-admin 1-teacher 2-student
+  };
+  next();
+});
 // zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
 
 router.use(["/signin", "/signup"], function (req, res, next) {
