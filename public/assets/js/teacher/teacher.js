@@ -1,4 +1,3 @@
-
 function preview() {
     frame.src = URL.createObjectURL(event.target.files[0]);
 }
@@ -12,4 +11,10 @@ function clearImage() {
 
 function preview1() {
     frame1.src = URL.createObjectURL(event.target.files[0]);
+}
+
+function clearImage() {
+    document.getElementById('formFile1').value = null;
+    // document.getElementById('formfile1').value = null;
+    frame1.src = "";
 }

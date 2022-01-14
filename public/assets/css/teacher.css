@@ -48,3 +48,8 @@
     a.btn{
       width: 45%;
     }
+
+    .btn-devide{
+      display: flex;
+      justify-content: center;
+    }
