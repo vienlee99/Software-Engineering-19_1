@@ -14,10 +14,10 @@
                                 <div class="box">
                                     <img src="/assets/images/icon-course.png" alt="" class="icon-1">
                                     <div class="group-1">
-                                        <h1>1478 286</h1>
-                                        <p>Total visits</p>
+                                        <h1>{{totalCourse}}</h1>
+                                        <p>Total Course</p>
                                         <img src="/assets/images/icon-trending-up.png">
-                                        <span>4.07%</span>
+                                        <span>{{incCourse}}</span>
                                         <span>&ThinSpace;Last month</span>
                                     </div>
                                 </div>
@@ -26,10 +26,10 @@
                                 <div class="box">
                                     <img src="/assets/images/icon-student.png" alt="" class="icon-1">
                                     <div class="group-1">
-                                        <h1>1478 286</h1>
-                                        <p>Total visits</p>
+                                        <h1>{{totalStudent}}</h1>
+                                        <p>Total student</p>
                                         <img src="/assets/images/icon-trending-up.png">
-                                        <span>4.07%</span>
+                                        <span>{{incStudent}}</span>
                                         <span>&ThinSpace;Last month</span>
                                     </div>
                                 </div>
@@ -38,10 +38,10 @@
                                 <div class="box">
                                     <img src="/assets/images/icon-teacher.png" alt="" class="icon-1">
                                     <div class="group-1">
-                                        <h1>1478 286</h1>
-                                        <p>Total visits</p>
-                                        <img src="/assets/images/icon-trending-down.png">
-                                        <span>4.07%</span>
+                                        <h1>{{TotalTeacher}}</h1>
+                                        <p>Total teacher</p>
+                                        <img src="/assets/images/icon-trending-up.png">
+                                        <span>{{incTeacher}}</span>
                                         <span>&ThinSpace;Last month</span>
                                     </div>
                                 </div>
@@ -54,19 +54,19 @@
                     <div class="col">
                         <div id="sec-2">
                             <div class="box">
-                                 <div id="group-2-1" class="group-2">
+                                <div id="group-2-1" class="group-2">
                                     <h1>Incomme per month</h1>
-                                    <p>May - Oct</p>
+                                    <p><span id="MonthBefore"> </span>& - <span id="MonthNow">{{MonthNow}}</span> </p>
                                 </div>
                                 <div id="group-2-2" class="group-2 group-2-2">
                                     <p>This month</p>
-                                    <h1>475 273</h1>
+                                    <h1>{{incomeNow}}</h1>
                                 </div>
                                 <div id="group-2-3" class="group-2 group-2-2">
                                     <p>Same period last year</p>
-                                    <h1>225 273</h1>
+                                    <h1>{{incomeLastyear}}</h1>
                                 </div>
-                                <canvas id="myChart3"  style="width:200px ;height:100px"></canvas>
+                                <canvas id="myChart" style="width:200px ;height:100px"></canvas>
 
 
                             </div>
@@ -78,33 +78,19 @@
                 <div id="sec-3">
                     <div class="box">
 
-                    <div id="group-3-0" class="group-3">
-                        <h1>Top Subject</h1><br>
-                        <p>28 subjects, 1400 Courses</p>
-                    </div>
+                        <div id="group-3-0" class="group-3">
+                            <h1>Top Subject</h1><br>
+                            <p>{{totalSubject}} subjects, {{totalCourse}} Courses</p>
+                        </div>
 
-                    <div class="table">
-                        <div id="group-3-0" class="group-3">
-                            <h1>Math</h1><span class="tag-count">8.2k</span><br>
-                            <p>Natural science</p><span class="tag-inc">+472</span>
+                        <div class="table">
+                            {{#each topCourses}}
+                            <div id="group-3-0" class="group-3">
+                                <h1>{{name}}</h1><span class="tag-count">{{total}}</span><br>
+                                <p>{{Subject}}</p><span class="tag-inc">+{{inc}}</span>
+                            </div>                            
+                            {{/each}}
                         </div>
-                        <div id="group-3-0" class="group-3">
-                            <h1>Physics</h1><span class="tag-count">8.2k</span><br>
-                            <p>Natural science</p><span class="tag-inc">+472</span>
-                        </div>
-                        <div id="group-3-0" class="group-3">
-                            <h1>Chemistry</h1><span class="tag-count">8.2k</span><br>
-                            <p>Natural science</p><span class="tag-inc">+472</span>
-                        </div>
-                        <div id="group-3-0" class="group-3">
-                            <h1>Deep Learning</h1><span class="tag-count">8.2k</span><br>
-                            <p>AI</p><span class="tag-inc">+472</span>
-                        </div>
-                        <div id="group-3-0" class="group-3">
-                            <h1>Machine Learning</h1><span class="tag-count">8.2k</span><br>
-                            <p>AI</p><span class="tag-inc">+472</span>
-                        </div>
-                    </div>
 
                     </div>
 

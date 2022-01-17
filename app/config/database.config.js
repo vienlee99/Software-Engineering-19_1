@@ -1,4 +1,3 @@
-const TypeUser = require("../models/typeUserModel");
 const mongoose = require("mongoose");
 const typeUserMap = {};
 
@@ -15,11 +14,5 @@ module.exports = {
         console.log(error);
       }
     })();
-
-    TypeUser.find({}, function (err, typeUsers) {
-      typeUsers.forEach(function (typeUser) {
-        typeUserMap[typeUser.name] = typeUser._id;
-      });
-    });
   },
 };

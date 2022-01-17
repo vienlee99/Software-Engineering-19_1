@@ -34,3 +34,11 @@ app.use(route);
 app.listen(port, () => {
   console.log(`Example app listen on port ${port}`);
 });
+
+
+
+// Thêm bảng giao dịch
+// TID
+// Loại
+// Số tiền
+// UserID
