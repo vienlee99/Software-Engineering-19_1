@@ -12,35 +12,31 @@
 
       </ul>
       <form class="d-flex">
-        <input
-          class="form-control me-3"
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
-        />
-      </form>
-      <ul
-        class="navbar-nav me-auto mb-3 mb-lg-0"
-        style="margin-right: 0 !important;"
-      >
-        <li><p style="padding-top:15px">Name</p></li>
-        <li>
-          <a class="nav-link" aria-current="page" href="#">
-            <img
-              src="/assets/images/mini-logo.png"
-              alt=""
-              width="170"
-              height="40"
-            />
-          </a>
-        </li>
+        <input id="search1" class="form-control me-3" type="search" placeholder="Search" aria-label="Search" </form>
+        <ul class="navbar-nav me-auto mb-3 mb-lg-0" style="margin-right: 0 !important;">
+          <li>
+            <p style="padding-top:15px">Name</p>
+          </li>
+          <li>
+            <a class="nav-link" aria-current="page" href="#">
+              <img src="/assets/images/mini-logo.png" alt="" width="170" height="40" />
+            </a>
+          </li>
 
-        <li class="nav-item mx-2">
-          <a class="nav-link" aria-current="page" href="/signout">Sign out</a>
-        </li>
-      </ul>
+          <li class="nav-item mx-2">
+            <a class="nav-link" aria-current="page" href="/signout">Sign out</a>
+          </li>
+        </ul>
 
     </div>
   </div>
 </nav>
 <div class="q-example-divider"></div>
+<script>
+  $("#search1").on('keyup', function (e) {
+    if (e.key === 'Enter' || e.keyCode === 13) {
+      let keyword = $(this).val();
+      window.location.href=`/search?q=${keyword}`;
+    }
+  });
+</script>
