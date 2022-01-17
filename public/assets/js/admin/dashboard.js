@@ -1,8 +1,24 @@
+const MonthIndex = [
+  "Jan",
+  "Feb",
+  "March",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+
+const MonthNow = $("#MonthNow");
 const ctx = document.getElementById("myChart").getContext("2d");
 const myChart = new Chart(ctx, {
   type: "line",
   data: {
-    labels: ["May", "Jun", "Jul", "Aug", "Sep", "Oct"],
+    labels: MonthIndex.slice(MonthNow - 1, MonthNow - 7),
     datasets: [
       {
         tension: 0.3,

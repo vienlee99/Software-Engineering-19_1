@@ -1,10 +1,6 @@
 const mongoose = require("mongoose");
-var AutoIncrement = require('mongoose-sequence')(mongoose);
 
 const UserSchema = new mongoose.Schema({
-  _id: {
-    type: Number,
-  },
   username: {
     type: String,
     required: true,
@@ -24,6 +20,12 @@ const UserSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "students",
   },
+  mobilephone: {
+    type: String,
+    required: true,
+    maxlength: 11,
+    trim: true,
+  },
   typeuserId: {
     type: Number,
     required: true,
@@ -35,9 +37,13 @@ const UserSchema = new mongoose.Schema({
   imagePath: {
     type: String,
   },
+  createdDate: {
+    type: Date,
+    required: true,
+    default: Date.now(),
+  },
 });
 
-UserSchema.plugin(AutoIncrement, {id:'order_seq',inc_field: '_id'});
 const UserModel = mongoose.model("User", UserSchema);
 
 module.exports = UserModel;

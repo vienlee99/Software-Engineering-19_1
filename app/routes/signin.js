@@ -9,8 +9,9 @@ router.get("/", (req, res) => {
   signinController.index(req, res);
 });
 
-router.post("/", (req, res) => {
-  signinController.signin(req, res);
+router.post("/", (req, res,next) => {
+  signinController.signin(req, res,next); 
 });
+
 
 module.exports = router;

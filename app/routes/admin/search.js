@@ -1,15 +1,16 @@
 const router = require("express").Router();
-//   signinController = require("../controllers/signinController");
+searchController = require("../../controllers/admin/search");
 
-// route.get("/", (req, res) => {
-//   signinController.index(req, res);
-// });
-// route.post("/", (req, res) => {
-//   if (signinController.login(req, res)) {
-//     res.redirect("../");
-//   } else {
-//     res.redirect("/");
-//   }
-// });
+router.get("/", (req, res) => {
+  searchController.index(req, res);
+});
+
+router.post("/", (req, res) => {
+  //   if (searchController.login(req, res)) {
+  //     res.redirect("../");
+  //   } else {
+  //     res.redirect("/");
+  //   }
+});
 
 module.exports = router;

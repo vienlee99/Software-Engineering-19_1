@@ -4,9 +4,6 @@ const bcrypt = require("bcrypt");
 const saltRounds = require("../../app/config/security.config").saltRounds;
 
 class SignupController {
-  constructor() {
-    this.count = 0;
-  }
   index(req, res, msg) {
     res.render("signup", {
       layout: "blank-layout",
@@ -21,8 +18,8 @@ class SignupController {
     return (
       validator.isAlphanumeric(username) &&
       /^((84|0[3|5|7|8|9])+([0-9]{8}))$/.test(mobilephone) &&
-      validator.isIn(usertype, [1, 2]) &&
-      validator.isLength(username, { min: 6, max: 32 }) &&
+      validator.isIn(usertype, [ 1, 2]) &&
+      validator.isLength(username, { min: 4, max: 32 }) &&
       validator.isLength(password, { min: 6, max: 32 })
     );
   }
@@ -40,14 +37,11 @@ class SignupController {
     if (!this.validateUsername(username, password, mobilephone, usertype))
       return { result: false, msg: "Invalid input !!" };
 
-    console.log("Existed user");
-
     // Existed user
     let users;
     try {
       users = await User.find({
-        // $or: [{ username: username }, { mobilephone: mobilephone }],
-        username: username,
+        $or: [{ username: username }, { mobilephone: mobilephone }],
       });
     } catch (error) {
       console.error(error, error.stack);
@@ -57,8 +51,6 @@ class SignupController {
     if (users.length > 0) 
       return { result: false, msg: "Existed username or mobilephone !!" };
     
-    console.log("Existed user");
-
     // hash password
     password = await bcrypt.hash(password, saltRounds);
 

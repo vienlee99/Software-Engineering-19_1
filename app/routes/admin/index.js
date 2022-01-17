@@ -3,8 +3,8 @@ const router = require("express").Router(),
   search = require("./search"),
   statistic = require("./statistic");
 
-router.get("/", dashboard);
-router.get("/search", search);
-router.get("/statistic", statistic);
+router.use("/", dashboard);
+router.use("/search", search);
+router.use("/statistic", statistic);
 
 module.exports = router;
