@@ -19,7 +19,10 @@ router.use(function (req, res, next) {
   next();
 });
 // zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
-
+router.get("/signout", function (req, res, next) {
+  req.session.user = null;
+  res.redirect("/");
+});
 router.use(["/signin", "/signup"], function (req, res, next) {
   if (!req.session.user) next();
 });
@@ -44,7 +47,7 @@ router.use(function (req, res, next) {
 router.use(function (req, res, next) {
   if (req.session.user && req.session.user.typeuserId === 2)
     student(req, res, next);
-  else next();
+  else res.redirect("/");
 });
 
 module.exports = router;
