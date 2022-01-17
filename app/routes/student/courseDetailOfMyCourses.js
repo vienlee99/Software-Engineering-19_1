@@ -1,5 +1,5 @@
-const router = require("express").Router();
-homepageController = require("../../controllers/student/courseDetailOfMyCourses");
+const router = require("express").Router(),
+  homepageController = require("../../controllers/student/courseDetailOfMyCourses");
 
 router.get("/", (req, res) => {
   homepageController.index(req, res);
