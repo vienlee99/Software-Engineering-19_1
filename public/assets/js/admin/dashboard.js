@@ -12,18 +12,33 @@ const MonthIndex = [
   "Nov",
   "Dec",
 ];
-
-const MonthNow = $("#MonthNow").text();
+function circular(arr, first, n) {
+  let temp = [];
+  while (n > 0) {
+    temp.push(arr[((first % 12) + 12) % 12]);
+    first++;
+    n--;
+  }
+  return temp;
+}
+const monthNow = $("#monthNow").text();
+let dataNow = $("#dataNow").text().split(",");
+let dataLastYear = $("#dataLastYear").text().split(",");
+dataNow = circular(dataNow, monthNow - 5, 6);
+dataLastYear = circular(dataLastYear, monthNow - 5, 6);
+let title = circular(MonthIndex, monthNow - 5, 6);
+// alert(dataNow)
+// alert(dataLastYear)
 const ctx = document.getElementById("myChart").getContext("2d");
 const myChart = new Chart(ctx, {
   type: "line",
   data: {
-    labels: MonthIndex.slice(MonthNow - 1, MonthNow - 7),
+    labels: title,
     datasets: [
       {
         tension: 0.3,
         label: "This year",
-        data: [12, 19, 3, 5, 2, 3],
+        data: dataNow,
         backgroundColor: ["#5F2EEA"],
         borderColor: ["#5F2EEA"],
         borderWidth: 1,
@@ -31,7 +46,7 @@ const myChart = new Chart(ctx, {
       {
         tension: 0.3,
         label: "Last year",
-        data: [10, 9, 5, 7, 2, 1],
+        data: dataLastYear,
         backgroundColor: ["#4BDE97"],
         borderColor: ["#4BDE97"],
         borderWidth: 1,

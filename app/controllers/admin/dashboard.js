@@ -114,8 +114,8 @@ class DashboardController {
         .sort({ studentCount: -1 })
         .limit(5),
     ]);
-    incomeNow = incomeNow.lenght ? incomeNow[0].total : 0;
-    incomeLastyear = incomeLastyear.lenght ? incomeLastyear[0].total : 0;
+    incomeNow = incomeNow.length ? incomeNow[0].total : 0;
+    incomeLastyear = incomeLastyear.length ? incomeLastyear[0].total : 0;
 
     let topCourseId = topCourses.map((x) => x._id);
     let inc = await courseModel.aggregate([
@@ -138,27 +138,13 @@ class DashboardController {
       return course;
     });
 
-    let MonthNow = moment().month();
-    let month = 1;
-    let data = await transactionModel.aggregate([
-      {
-        $match: {
-          time: {
-            $gte: moment().startOf("month").subtract(5, "year").toDate(),
-          },
-        },
-      },
-      {
-        $group: {
-          // _id: { $month: "$time" },
-          value: { $sum: "$value" },
-          month: { $month: "$time" },
-        },
-      },
+    let monthNow = moment().month();
+    let [dataNow, dataLastYear] = await Promise.all([
+      this.getDataByTime(moment()),
+      this.getDataByTime(moment().subtract(1, "year")),
     ]);
-
-    console.log(data);
-
+    // console.log((moment().startOf("month").subtract(5, "months").toDate()))
+    // console.log((moment().endOf("month").toDate()))
     res.render("admin/dashboard", {
       layout: "admin/layout1",
       path: "/dashboard",
@@ -173,7 +159,34 @@ class DashboardController {
       incomeLastyear: incomeLastyear,
       totalSubject: totalSubject,
       topCourses: topCourses,
+      dataNow: dataNow,
+      dataLastYear: dataLastYear,
+      monthNow: monthNow,
     });
+  }
+  //
+  async getDataByTime(time) {
+    let dataJSON = await transactionModel.aggregate([
+      {
+        $match: {
+          time: {
+            $gte: time.clone().startOf("month").subtract(5, "months").toDate(),
+            $lte: time.clone().toDate(),
+          },
+        },
+      },
+      {
+        $group: {
+          _id: { $month: "$time" },
+          value: { $sum: "$value" },
+        },
+      },
+    ]);
+    let data = new Array(12);
+    dataJSON.forEach((element) => {
+      data[element._id - 1] = element.value;
+    });
+    return data;
   }
 }
 
