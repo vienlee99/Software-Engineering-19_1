@@ -18,7 +18,7 @@
                                         <p>Total Course</p>
                                         <img src="/assets/images/icon-trending-up.png">
                                         <span>{{incCourse}}</span>
-                                        <span>&ThinSpace;Last month</span>
+                                        <span>&ThinSpace;This month</span>
                                     </div>
                                 </div>
                             </div>
@@ -30,7 +30,7 @@
                                         <p>Total student</p>
                                         <img src="/assets/images/icon-trending-up.png">
                                         <span>{{incStudent}}</span>
-                                        <span>&ThinSpace;Last month</span>
+                                        <span>&ThinSpace;This month</span>
                                     </div>
                                 </div>
                             </div>
@@ -38,11 +38,11 @@
                                 <div class="box">
                                     <img src="/assets/images/icon-teacher.png" alt="" class="icon-1">
                                     <div class="group-1">
-                                        <h1>{{TotalTeacher}}</h1>
+                                        <h1>{{totalTeacher}}</h1>
                                         <p>Total teacher</p>
                                         <img src="/assets/images/icon-trending-up.png">
                                         <span>{{incTeacher}}</span>
-                                        <span>&ThinSpace;Last month</span>
+                                        <span>&ThinSpace;This month</span>
                                     </div>
                                 </div>
 
@@ -56,7 +56,7 @@
                             <div class="box">
                                 <div id="group-2-1" class="group-2">
                                     <h1>Incomme per month</h1>
-                                    <p><span id="MonthBefore"> </span>& - <span id="MonthNow">{{MonthNow}}</span> </p>
+                                    <p><span id="MonthBefore"> </span>&nbsp; - &nbsp;<span id="MonthNow">{{MonthNow}}</span> </p>
                                 </div>
                                 <div id="group-2-2" class="group-2 group-2-2">
                                     <p>This month</p>
@@ -87,7 +87,7 @@
                             {{#each topCourses}}
                             <div id="group-3-0" class="group-3">
                                 <h1>{{name}}</h1><span class="tag-count">{{total}}</span><br>
-                                <p>{{Subject}}</p><span class="tag-inc">+{{inc}}</span>
+                                <p>{{subject}}</p><span class="tag-inc">+{{inc}}</span>
                             </div>                            
                             {{/each}}
                         </div>

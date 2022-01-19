@@ -47,7 +47,6 @@ router.use(function (req, res, next) {
 router.use(function (req, res, next) {
   if (req.session.user && req.session.user.typeuserId === 2)
     student(req, res, next);
-  else res.redirect("/");
 });
 
 module.exports = router;

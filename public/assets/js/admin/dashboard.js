@@ -13,7 +13,7 @@ const MonthIndex = [
   "Dec",
 ];
 
-const MonthNow = $("#MonthNow");
+const MonthNow = $("#MonthNow").text();
 const ctx = document.getElementById("myChart").getContext("2d");
 const myChart = new Chart(ctx, {
   type: "line",
