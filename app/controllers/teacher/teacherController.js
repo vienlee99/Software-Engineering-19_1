@@ -12,18 +12,7 @@ class TeacherContrller {
 
     // [GET] /teacher/search
     search(req, res, next){
-        //res.send('teacher/search')
-        // Course.find({}, function(err, courses) {
-        //     if(!err){
-        //         res.json(courses);
-        //     }
-        //     else {
-        //         res.status(400).json({ error: 'ERROR!!!' });
-        //     }
-        // });
-        Course.find({})
-        .then(courses => res.json(courses))
-        .catch(next);
+        res.send('teacher/search')
     }
 
     // [GET] /teacher/mycourses
@@ -41,10 +30,15 @@ class TeacherContrller {
 
     // [GET] /teacher/edit
     edit(req, res, next){
-        res.render("teacher/edit", {
-            layout: "teacher/teacher_layout",
-            path: req.originalUrl.split("?").shift()+'dashboard',
-          });
+        Course.findById(req.params.id).lean()
+        .then(courses => {
+            (res.render("teacher/edit", {
+                layout: "teacher/teacher_layout",
+                path: req.originalUrl.split("?").shift()+'dashboard',
+                courses: courses
+            }))
+        })
+        .catch(next);  
     }
 
     // [GET] /teacher/upload

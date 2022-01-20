@@ -2,7 +2,8 @@ const router = require("express").Router();
 
 const teacherContrller = require('../../controllers/teacher/teacherController');
 
-router.get('/', teacherContrller.edit);
+router.get('/:id', teacherContrller.edit);
+// router.get('/', teacherContrller.edit);
 
 
 module.exports = router;
