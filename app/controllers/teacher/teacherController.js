@@ -1,3 +1,5 @@
+const Course = require("../../models/courseModel")
+
 class TeacherContrller {
 
     // [GET] / teacher
@@ -9,16 +11,32 @@ class TeacherContrller {
     }
 
     // [GET] /teacher/search
-    search(req, res){
-        res.send('teacher/search')
+    search(req, res, next){
+        //res.send('teacher/search')
+        // Course.find({}, function(err, courses) {
+        //     if(!err){
+        //         res.json(courses);
+        //     }
+        //     else {
+        //         res.status(400).json({ error: 'ERROR!!!' });
+        //     }
+        // });
+        Course.find({})
+        .then(courses => res.json(courses))
+        .catch(next);
     }
 
     // [GET] /teacher/mycourses
     mycourses(req, res, next){
-        res.render("teacher/mycourses", {
-            layout: "teacher/teacher_layout",
-            path: req.originalUrl.split("?").shift()+'dashboard',
-          });
+        Course.find({}).lean()
+        .then(courses => {
+            (res.render("teacher/mycourses", {
+                layout: "teacher/teacher_layout",
+                path: req.originalUrl.split("?").shift()+'dashboard',
+                courses: courses
+              }))
+        })
+        .catch(next);
     }
 
     // [GET] /teacher/edit
@@ -43,6 +61,17 @@ class TeacherContrller {
             layout: "teacher/teacher_layout",
             path: req.originalUrl.split("?").shift()+'dashboard',
           });
+    }
+
+    // [POST] /teacher/store
+    store(req, res, next){
+        const formData = req.body;
+        const courses = new Course(formData);
+        courses.save()
+            .then(() => res.redirect('mycourses'))
+            .catch(error => {
+
+            })
     }
 }
 

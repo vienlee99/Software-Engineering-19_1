@@ -1,107 +1,28 @@
 <div class="container">
     <div class="mt-4">
         <h1 class="courses-title">Đây là tất cả khóa học của bạn</h1>
-        <hr> 
+        <hr>
         <div class="row">
+
+            {{#each courses}}
             <div class="col-sm-6 col-lg-4">
                 <div class="card card-course-item">
                     <a href="#">
-                        <img src="../../../assets/images/carousel1.jpg" class="card-img-top" alt="">
+                        <img src="{{this.image}}" class="card-img-top" alt="{{this.name}}">
                     </a>
                     <div class="card-body">
                         <a href="#">
-                            <h5 class="card-title">Tên khóa học</h5>
+                            <h5 class="card-title">{{this.name}}</h5>
                         </a>
-                        <p class="card-text">Mô tả khóa học</p>
-                        <a href="#" class="btn btn-primary">Tham gia</a>
-                        <a href="#" class="btn btn-primary btn-tinhtrang">Tình trạng</a>
+                        <p class="card-text">{{this.description}}</p>
+                        <a href="#" class="btn btn-primary">Lĩnh vực</a>
+                        <a href="#" class="btn btn-primary btn-tinhtrang">{{this.status}}</a>
+                        <div class="btn btn-primary">Tham gia</div>
                     </div>
                 </div>
             </div>
+            {{/each}}
 
-            <div class="col-sm-6 col-lg-4">
-                <div class="card card-course-item">
-                    <a href="#">
-                        <img src="../../../assets/images/carousel1.jpg" class="card-img-top" alt="">
-                    </a>
-                    <div class="card-body">
-                        <a href="#">
-                            <h5 class="card-title">Tên khóa học</h5>
-                        </a>
-                        <p class="card-text">Mô tả khóa học</p>
-                        <div class="btn-devide">
-                            <a href="#" class="btn btn-primary" style="margin:0 5px">Tham gia</a>
-                            <a href="#" class="btn btn-primary btn-tinhtrang btn-margin" style="margin:0 5px">Tình trạng</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-lg-4">
-                <div class="card card-course-item">
-                    <a href="#">
-                        <img src="../../../assets/images/carousel1.jpg" class="card-img-top" alt="">
-                    </a>
-                    <div class="card-body">
-                        <a href="#">
-                            <h5 class="card-title">Tên khóa học</h5>
-                        </a>
-                        <p class="card-text">Mô tả khóa học</p>
-                        <a href="#" class="btn btn-primary">Tham gia</a>
-                        <a href="#" class="btn btn-primary btn-tinhtrang">Tình trạng</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-lg-4">
-                <div class="card card-course-item">
-                    <a href="#">
-                        <img src="../../../assets/images/carousel1.jpg" class="card-img-top" alt="">
-                    </a>
-                    <div class="card-body">
-                        <a href="#">
-                            <h5 class="card-title">Tên khóa học</h5>
-                        </a>
-                        <p class="card-text">Mô tả khóa học</p>
-                        <a href="#" class="btn btn-primary">Tham gia</a>
-                        <a href="#" class="btn btn-primary btn-tinhtrang">Tình trạng</a>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-sm-6 col-lg-4">
-                <div class="card card-course-item">
-                    <a href="#">
-                        <img src="../../../assets/images/carousel1.jpg" class="card-img-top" alt="">
-                    </a>
-                    <div class="card-body">
-                        <a href="#">
-                            <h5 class="card-title">Tên khóa học</h5>
-                        </a>
-                        <p class="card-text">Mô tả khóa học</p>
-                        <a href="#" class="btn btn-primary">Tham gia</a>
-                        <a href="#" class="btn btn-primary btn-tinhtrang">Tình trạng</a>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-sm-6 col-lg-4">
-                <div class="card card-course-item">
-                    <a href="#">
-                        <img src="../../../assets/images/carousel1.jpg" class="card-img-top" alt="">
-                    </a>
-                    <div class="card-body">
-                        <a href="#">
-                            <h5 class="card-title">Tên khóa học</h5>
-                        </a>
-                        <p class="card-text">Mô tả khóa học</p>
-                        <a href="#" class="btn btn-primary">Tham gia</a>
-                        <a href="#" class="btn btn-primary btn-tinhtrang">Tình trạng</a>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>

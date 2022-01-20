@@ -29,6 +29,7 @@ router.use(["/signin", "/signup"], function (req, res, next) {
 
 router.use("/signin", signin);
 router.use("/signup", signup);
+router.use("/teacher", teacher)
 
 router.use("/", function (req, res, next) {
   if (!req.session.user) welcome(req, res, next);
