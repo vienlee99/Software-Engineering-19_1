@@ -10,6 +10,7 @@ module.exports = {
           useNewUrlParser: true,
           useUnifiedTopology: true,
         });
+        console.log("Thành công kết nối Database")
       } catch (error) {
         console.log(error);
       }

@@ -1,3 +1,6 @@
+const Course = require("../../models/courseModel")
+var a = require('mongodb').ObjectId;
+
 class TeacherContrller {
 
     // [GET] / teacher
@@ -9,24 +12,34 @@ class TeacherContrller {
     }
 
     // [GET] /teacher/search
-    search(req, res){
+    search(req, res, next){
         res.send('teacher/search')
     }
 
     // [GET] /teacher/mycourses
     mycourses(req, res, next){
-        res.render("teacher/mycourses", {
-            layout: "teacher/teacher_layout",
-            path: req.originalUrl.split("?").shift()+'dashboard',
-          });
+        Course.find({}).lean()
+        .then(courses => {
+            (res.render("teacher/mycourses", {
+                layout: "teacher/teacher_layout",
+                path: req.originalUrl.split("?").shift()+'dashboard',
+                courses: courses
+              }))
+        })
+        .catch(next);
     }
 
     // [GET] /teacher/edit
     edit(req, res, next){
-        res.render("teacher/edit", {
-            layout: "teacher/teacher_layout",
-            path: req.originalUrl.split("?").shift()+'dashboard',
-          });
+        Course.findById(req.params.id).lean()
+        .then(courses => {
+            (res.render("teacher/edit", {
+                layout: "teacher/teacher_layout",
+                path: req.originalUrl.split("?").shift()+'dashboard',
+                courses: courses
+            }))
+        })
+        .catch(next);  
     }
 
     // [GET] /teacher/upload
@@ -43,6 +56,24 @@ class TeacherContrller {
             layout: "teacher/teacher_layout",
             path: req.originalUrl.split("?").shift()+'dashboard',
           });
+    }
+
+    // [POST] /teacher/store
+    store(req, res, next){
+        const formData = req.body;
+        const courses = new Course(formData);
+        courses.save()
+            .then(() => res.redirect('mycourses'))
+            .catch(error => {
+
+            })
+    }
+
+    // [PUT] /teacher/:id
+    update(req, res, next){
+        Course.updateOne({ _id: req.params.id }, req.body)
+        .then(() => res.redirect('mycourses'))
+        .catch(next);
     }
 }
 
