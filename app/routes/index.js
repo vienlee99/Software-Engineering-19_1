@@ -7,17 +7,17 @@ const router = require("express").Router(),
   teacher = require("./teacher");
 
 // zzzzzzzzzzzzzzzzz Bỏ qua đăng nhập zzzzzzzzzzzzzzz
-router.use(function (req, res, next) {
-  req.session.user = {
-    _id: 4,
-    username: "root",
-    password: "$2b$10$UCaXZw6DL6Y1JrWZFRPvtODvd2Z1Apr0hcHrPXH2fyKS0GHK8kabi", // 123456
-    mobilephone: "0812540145",
-    typeuserId: 0, // loại người dùng 0-admin 1-teacher 2-student
-    remainningBalance: 100000,
-  };
-  next();
-});
+// router.use(function (req, res, next) {
+//   req.session.user = {
+//     _id: 4,
+//     username: "root",
+//     password: "$2b$10$UCaXZw6DL6Y1JrWZFRPvtODvd2Z1Apr0hcHrPXH2fyKS0GHK8kabi", // 123456
+//     mobilephone: "0812540145",
+//     typeuserId: 0, // loại người dùng 0-admin 1-teacher 2-student
+//     remainningBalance: 100000,
+//   };
+//   next();
+// });
 // zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
 router.get("/signout", function (req, res, next) {
   req.session.user = null;
