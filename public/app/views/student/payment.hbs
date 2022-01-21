@@ -65,10 +65,7 @@ flex: none;
 order: 3;
 flex-grow: 0;
 padding-top:50px;">
-    <button id="thanhtoan" class="btn btn-danger" style="height: 4rem; width: 9rem; font-size: 20px;" {{! style="
-        font-size:30px;
-        color:white;
-        background-color: #B12704;" }}>
+    <button id="thanhtoan" class="btn btn-danger" style="height: 4rem; width: 9rem; font-size: 20px;"        >
       Thanh toán
     </button>
     <p id="courseId" style="display: none;">{{courseId}}</p>
@@ -78,7 +75,7 @@ padding-top:50px;">
         let courseId = $('#courseId').text()
         let userId = $('#userId').text()
          $.ajax({
-          type: 'post',
+          type: 'POST',
           url: '/payment/pay',
           data: {
             courseId: courseId,
@@ -86,6 +83,7 @@ padding-top:50px;">
           },
           succcess: function (data) {
             alert(data)
+            console.log(data)
           }
         }) 
       })

@@ -15,13 +15,14 @@
         <input id="search1" class="form-control me-3" type="search" placeholder="Search" aria-label="Search" </form>
         <ul class="navbar-nav me-auto mb-3 mb-lg-0" style="margin-right: 0 !important;">
           <li>
-            <p style="padding-top:15px">Name</p>
+            <p style="padding-top:15px">{{user.name}}</p>
           </li>
           <li>
-              <img src="/assets/images/mini-logo.png" alt="" width="170" height="40" />
+              <img id='avartar'src="/assets/images/{{user.imagePath}}" alt="" width="40" height="40" />
+
           </li>
 
-          <li class="nav-item mx-2">
+          <li class="nav-item mx-2" style="    width: 80px;          ">
             <a class="nav-link" aria-current="page" href="/signout">Sign out</a>
           </li>
         </ul>
@@ -37,4 +38,7 @@
       window.location.href=`/search?q=${keyword}`;
     }
   });
+
+
+
 </script>

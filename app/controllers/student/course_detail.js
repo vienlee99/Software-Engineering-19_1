@@ -5,8 +5,7 @@ class StudentCourseDetail {
     let id = req.query.id;
     let detail = await coursesModel.findById(id);
     let teacher = await teacherModel.findById(detail.teacherId.toString());
-    // console.log(detail);
-    // console.log(teacher);
+
 
     var options = {
       weekday: "long",
