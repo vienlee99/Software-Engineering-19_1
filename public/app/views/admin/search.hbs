@@ -1,288 +1,459 @@
 <div class="container">
-    <p id="title">
-        Statistics
-    </p>
-    <div id="box-radio">
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-            <label class="form-check-label" for="flexRadioDefault1">
-                Course
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-            <label class="form-check-label" for="flexRadioDefault2">
-                Teacher
-            </label>
-        </div>
-    </div>
+
     <div class="sec-title">
-        <h1>Statistics</h1>
-        <button id="btn-stat">statistic</button>
+        <p id="title">Search</p>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">
+                <img src="/assets/images/icon-search.png">
+            </span>
+            <input type="text" class="form-control" placeholder="FIND ITEMS" aria-label="Username"
+                aria-describedby="basic-addon1">
+        </div>
+        <button id="btn-stat">Search</button>
     </div>
 
-    <div id="main-content" class="container" style="display: none;">
-        <div class="row">
-            <div class="col-8">
-                <div class="row">
-                    <div id="sec-1">
-                        <div class="row">
-                            <div class="col">
-                                <div class="box">
-                                    <img src="/assets/images/icon-course.png" alt="" class="icon-1">
-                                    <div class="group-1">
-                                        <h1>1478 286</h1>
-                                        <p>Total Course</p>
-                                        <img src="/assets/images/icon-trending-up.png">
-                                        <span>4.07%</span>
-                                        <span>&ThinSpace;Last month</span>
-                                    </div>
-                                </div>
+    <div id="fram-1" style="display: none;">
+        <div id="main-content">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="text-center">Course</th>
+                        <th class="text-center">Teacher</th>
+                        <th class="text-center">Status</th>
+                        <th class="text-center">Date</th>
+                        <th class="text-center">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <img class="icon-sub" style="background-image: url(/assets/images/sub-logo-1.jpg)">
+                            Matdematics for Machine Learning Specialization
+                        </td>
+                        <td>
+                            <img class="icon-tea"
+                                style="background-image: url(/assets/images/teacher1.jpg);background-size: 67px">
+                            David Dye
+                        </td>
+                        <td><img class="icon-status" src="/assets/images/active.png"></td>
+                        <td>18.05.2020</td>
+                        <td>
+                            <div>
+                                <img src="/assets/images/icon-action-info.png ">
+                                <img src="/assets/images/icon-action-block.png ">
+                                <img src="/assets/images/icon-action-delete_forever.png ">
                             </div>
-                            <div class="col">
-                                <div class="box">
-                                    <img src="/assets/images/icon-student.png" alt="" class="icon-1">
-                                    <div class="group-1">
-                                        <h1>1478 286</h1>
-                                        <p>Total visits</p>
-                                        <img src="/assets/images/icon-trending-up.png">
-                                        <span>4.07%</span>
-                                        <span>&ThinSpace;Last month</span>
-                                    </div>
-                                </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="icon-sub" style="background-image: url(/assets/images/sub-logo-1.jpg)">
+                            Matdematics for Machine Learning Specialization
+                        </td>
+                        <td>
+                            <img class="icon-tea"
+                                style="background-image: url(/assets/images/teacher1.jpg);background-size: 67px">
+                            David Dye
+                        </td>
+                        <td><img class="icon-status" src="/assets/images/active.png"></td>
+                        <td>18.05.2020</td>
+                        <td>
+                            <div>
+                                <img src="/assets/images/icon-action-info.png ">
+                                <img src="/assets/images/icon-action-block.png ">
+                                <img src="/assets/images/icon-action-delete_forever.png ">
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row" style="margin-bottom: 3vh;">
-                    <div class="col">
-                        <div id="sec-2" style="height: 27vh;">
-                            <div class="box">
-                                <div id="group-2-1" class="group-2">
-                                    <h1 style="margin-bottom: 0.2rem;">New Courses</h1>
-                                    <p>This year</p>
-                                </div>
-                                <div id="group-2-2" class="group-2 group-2-2">
-                                    <p>This month</p>
-                                    <h1>475 273</h1>
-                                </div>
-                                <canvas id="myChart" style="width:200px ;height:100px"></canvas>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="icon-sub" style="background-image: url(/assets/images/sub-logo-1.jpg)">
+                            Matdematics for Machine Learning Specialization
+                        </td>
+                        <td>
+                            <img class="icon-tea"
+                                style="background-image: url(/assets/images/teacher1.jpg);background-size: 67px">
+                            David Dye
+                        </td>
+                        <td><img class="icon-status" src="/assets/images/active.png"></td>
+                        <td>18.05.2020</td>
+                        <td>
+                            <div>
+                                <img src="/assets/images/icon-action-info.png ">
+                                <img src="/assets/images/icon-action-block.png ">
+                                <img src="/assets/images/icon-action-delete_forever.png ">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="icon-sub" style="background-image: url(/assets/images/sub-logo-1.jpg)">
+                            Matdematics for Machine Learning Specialization
+                        </td>
+                        <td>
+                            <img class="icon-tea"
+                                style="background-image: url(/assets/images/teacher1.jpg);background-size: 67px">
+                            David Dye
+                        </td>
+                        <td><img class="icon-status" src="/assets/images/active.png"></td>
+                        <td>18.05.2020</td>
+                        <td>
+                            <div>
+                                <img src="/assets/images/icon-action-info.png ">
+                                <img src="/assets/images/icon-action-block.png ">
+                                <img src="/assets/images/icon-action-delete_forever.png ">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="icon-sub" style="background-image: url(/assets/images/sub-logo-1.jpg)">
+                            Matdematics for Machine Learning Specialization
+                        </td>
+                        <td>
+                            <img class="icon-tea"
+                                style="background-image: url(/assets/images/teacher1.jpg);background-size: 67px">
+                            David Dye
+                        </td>
+                        <td><img class="icon-status" src="/assets/images/active.png"></td>
+                        <td>18.05.2020</td>
+                        <td>
+                            <div>
+                                <img src="/assets/images/icon-action-info.png ">
+                                <img src="/assets/images/icon-action-block.png ">
+                                <img src="/assets/images/icon-action-delete_forever.png ">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="icon-sub" style="background-image: url(/assets/images/sub-logo-1.jpg)">
+                            Matdematics for Machine Learning Specialization
+                        </td>
+                        <td>
+                            <img class="icon-tea"
+                                style="background-image: url(/assets/images/teacher1.jpg);background-size: 67px">
+                            David Dye
+                        </td>
+                        <td><img class="icon-status" src="/assets/images/active.png"></td>
+                        <td>18.05.2020</td>
+                        <td>
+                            <div>
+                                <img src="/assets/images/icon-action-info.png ">
+                                <img src="/assets/images/icon-action-block.png ">
+                                <img src="/assets/images/icon-action-delete_forever.png ">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="icon-sub" style="background-image: url(/assets/images/sub-logo-1.jpg)">
+                            Matdematics for Machine Learning Specialization
+                        </td>
+                        <td>
+                            <img class="icon-tea"
+                                style="background-image: url(/assets/images/teacher1.jpg);background-size: 67px">
+                            David Dye
+                        </td>
+                        <td><img class="icon-status" src="/assets/images/active.png"></td>
+                        <td>18.05.2020</td>
+                        <td>
+                            <div>
+                                <img src="/assets/images/icon-action-info.png ">
+                                <img src="/assets/images/icon-action-block.png ">
+                                <img src="/assets/images/icon-action-delete_forever.png ">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="icon-sub" style="background-image: url(/assets/images/sub-logo-1.jpg)">
+                            Matdematics for Machine Learning Specialization
+                        </td>
+                        <td>
+                            <img class="icon-tea"
+                                style="background-image: url(/assets/images/teacher1.jpg);background-size: 67px">
+                            David Dye
+                        </td>
+                        <td><img class="icon-status" src="/assets/images/active.png"></td>
+                        <td>18.05.2020</td>
+                        <td>
+                            <div>
+                                <img src="/assets/images/icon-action-info.png ">
+                                <img src="/assets/images/icon-action-block.png ">
+                                <img src="/assets/images/icon-action-delete_forever.png ">
+                            </div>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
 
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <div id="sec-4" style="height: 27vh;">
-                            <div class="box">
-                                <div id="group-2-1" class="group-2">
-                                    <h1>New students</h1>
-                                    <p>This year</p>
-                                </div>
-                                <div id="group-2-2" class="group-2 group-2-2">
-                                    <p>This month</p>
-                                    <h1>475 273</h1>
-                                </div>
-                                <canvas id="myChart2" style="width:200px ;height:100px"></canvas>
-
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        </div>
+        <div class="box-sort">
+            <select class="form-select" aria-label="Default select example">
+                <option selected style="display: none;">Sort by</option>
+                <option value="1">Course</option>
+                <option value="2">Teacher</option>
+                <option value="3">Status</option>
+                <option value="3">Date</option>
+            </select>
+        </div>
+        <div class="box-radio">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                    Course
+                </label>
             </div>
-            <div class="col-4">
-                <div class="row">
-                    <div class="col">
-                        <div id="sec-5">
-                            <div class="box">
-                                <img src="/assets/images/icon-teacher.png" alt="" class="icon-1">
-                                <div class="group-1">
-                                    <h1>1478 286</h1>
-                                    <p>Total visits</p>
-                                    <img src="/assets/images/icon-trending-down.png">
-                                    <span>4.07%</span>
-                                    <span>&ThinSpace;Last month</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row" style="margin-top: 3vh;">
-                    <div class="col">
-
-                        <div id="sec-3" style="height: 57vh">
-                            <div class="box">
-
-                                <div id="group-3-0" class="group-3">
-                                    <h1>Top Subject</h1><br>
-                                    <p>28 subjects, 1400 Courses</p>
-                                </div>
-
-                                <div class="table">
-                                    <div id="group-3-0" class="group-3">
-                                        <h1>Math</h1><span class="tag-count">8.2k</span><br>
-                                        <p>Natural science</p><span class="tag-inc">+472</span>
-                                    </div>
-                                    <div id="group-3-0" class="group-3">
-                                        <h1>Physics</h1><span class="tag-count">8.2k</span><br>
-                                        <p>Natural science</p><span class="tag-inc">+472</span>
-                                    </div>
-                                    <div id="group-3-0" class="group-3">
-                                        <h1>Chemistry</h1><span class="tag-count">8.2k</span><br>
-                                        <p>Natural science</p><span class="tag-inc">+472</span>
-                                    </div>
-                                    <div id="group-3-0" class="group-3">
-                                        <h1>Deep Learning</h1><span class="tag-count">8.2k</span><br>
-                                        <p>AI</p><span class="tag-inc">+472</span>
-                                    </div>
-                                    <div id="group-3-0" class="group-3">
-                                        <h1>Machine Learning</h1><span class="tag-count">8.2k</span><br>
-                                        <p>AI</p><span class="tag-inc">+472</span>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <label class="form-check-label" for="flexRadioDefault2">
+                    Teacher
+                </label>
+            </div>
+        </div>
+        <div class="box-select">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    Math
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    Physics
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    AI
+                </label>
             </div>
         </div>
     </div>
 
-    <div id="main-content2" class="container">
-        <div class="row">
-            <div class="col-8">
-                <div class="row">
-                    <div id="sec-1">
-                        <div class="row">
-                            <div class="col">
-                                <div class="box">
-                                    <img src="/assets/images/icon-course.png" alt="" class="icon-1">
-                                    <div class="group-1">
-                                        <h1>1478 286</h1>
-                                        <p>Total Course</p>
-                                        <img src="/assets/images/icon-trending-up.png">
-                                        <span>4.07%</span>
-                                        <span>&ThinSpace;Last month</span>
-                                    </div>
-                                </div>
+
+    <div id="fram-2">
+        <div id="main-content">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="text-center">Teacher</th>
+                        <th class="text-center">Subject</th>
+                        <th class="text-center">Human race</th>
+                        <th class="text-center">Status</th>
+                        <th class="text-center">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <img class="icon-tea"
+                                style="background-image: url(/assets/images/teacher1.jpg);background-size: 67px">
+                            David Dye
+                        </td>
+                        <td class="text-center">Math</td>
+                        <td class="text-center">American</td>
+                        <td class="text-center"><img class="icon-status" src="/assets/images/active.png"></td>
+                        <td>
+                            <div>
+                                <img src="/assets/images/icon-action-info.png ">
+                                <img src="/assets/images/icon-action-block.png ">
+                                <img src="/assets/images/icon-action-delete_forever.png ">
                             </div>
-                            <div class="col">
-                                <div class="box">
-                                    <img src="/assets/images/icon-student.png" alt="" class="icon-1">
-                                    <div class="group-1">
-                                        <h1>1478 286</h1>
-                                        <p>Total visits</p>
-                                        <img src="/assets/images/icon-trending-up.png">
-                                        <span>4.07%</span>
-                                        <span>&ThinSpace;Last month</span>
-                                    </div>
-                                </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="icon-tea"
+                                style="background-image: url(/assets/images/teacher1.jpg);background-size: 67px">
+                            David Dye
+                        </td>
+                        <td class="text-center">Math</td>
+                        <td class="text-center">American</td>
+                        <td class="text-center"><img class="icon-status" src="/assets/images/active.png"></td>
+                        <td>
+                            <div>
+                                <img src="/assets/images/icon-action-info.png ">
+                                <img src="/assets/images/icon-action-block.png ">
+                                <img src="/assets/images/icon-action-delete_forever.png ">
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row" style="margin-bottom: 3vh;">
-                    <div class="col">
-                        <div id="sec-2" style="height: 27vh;">
-                            <div class="box">
-                                <div id="group-2-1" class="group-2">
-                                    <h1 style="margin-bottom: 0.2rem;">New Courses</h1>
-                                    <p>This year</p>
-                                </div>
-                                <div id="group-2-2" class="group-2 group-2-2">
-                                    <p>This month</p>
-                                    <h1>475 273</h1>
-                                </div>
-                                <canvas id="myChart3" style="width:200px ;height:100px"></canvas>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="icon-tea"
+                                style="background-image: url(/assets/images/teacher1.jpg);background-size: 67px">
+                            David Dye
+                        </td>
+                        <td class="text-center">Math</td>
+                        <td class="text-center">American</td>
+                        <td class="text-center"><img class="icon-status" src="/assets/images/active.png"></td>
+                        <td>
+                            <div>
+                                <img src="/assets/images/icon-action-info.png ">
+                                <img src="/assets/images/icon-action-block.png ">
+                                <img src="/assets/images/icon-action-delete_forever.png ">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="icon-tea"
+                                style="background-image: url(/assets/images/teacher1.jpg);background-size: 67px">
+                            David Dye
+                        </td>
+                        <td class="text-center">Math</td>
+                        <td class="text-center">American</td>
+                        <td class="text-center"><img class="icon-status" src="/assets/images/active.png"></td>
+                        <td>
+                            <div>
+                                <img src="/assets/images/icon-action-info.png ">
+                                <img src="/assets/images/icon-action-block.png ">
+                                <img src="/assets/images/icon-action-delete_forever.png ">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="icon-tea"
+                                style="background-image: url(/assets/images/teacher1.jpg);background-size: 67px">
+                            David Dye
+                        </td>
+                        <td class="text-center">Math</td>
+                        <td class="text-center">American</td>
+                        <td class="text-center"><img class="icon-status" src="/assets/images/active.png"></td>
+                        <td>
+                            <div>
+                                <img src="/assets/images/icon-action-info.png ">
+                                <img src="/assets/images/icon-action-block.png ">
+                                <img src="/assets/images/icon-action-delete_forever.png ">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="icon-tea"
+                                style="background-image: url(/assets/images/teacher1.jpg);background-size: 67px">
+                            David Dye
+                        </td>
+                        <td class="text-center">Math</td>
+                        <td class="text-center">American</td>
+                        <td class="text-center"><img class="icon-status" src="/assets/images/active.png"></td>
+                        <td>
+                            <div>
+                                <img src="/assets/images/icon-action-info.png ">
+                                <img src="/assets/images/icon-action-block.png ">
+                                <img src="/assets/images/icon-action-delete_forever.png ">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="icon-tea"
+                                style="background-image: url(/assets/images/teacher1.jpg);background-size: 67px">
+                            David Dye
+                        </td>
+                        <td class="text-center">Math</td>
+                        <td class="text-center">American</td>
+                        <td class="text-center"><img class="icon-status" src="/assets/images/active.png"></td>
+                        <td>
+                            <div>
+                                <img src="/assets/images/icon-action-info.png ">
+                                <img src="/assets/images/icon-action-block.png ">
+                                <img src="/assets/images/icon-action-delete_forever.png ">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="icon-tea"
+                                style="background-image: url(/assets/images/teacher1.jpg);background-size: 67px">
+                            David Dye
+                        </td>
+                        <td class="text-center">Math</td>
+                        <td class="text-center">American</td>
+                        <td class="text-center"><img class="icon-status" src="/assets/images/active.png"></td>
+                        <td>
+                            <div>
+                                <img src="/assets/images/icon-action-info.png ">
+                                <img src="/assets/images/icon-action-block.png ">
+                                <img src="/assets/images/icon-action-delete_forever.png ">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="icon-tea"
+                                style="background-image: url(/assets/images/teacher1.jpg);background-size: 67px">
+                            David Dye
+                        </td>
+                        <td class="text-center">Math</td>
+                        <td class="text-center">American</td>
+                        <td class="text-center"><img class="icon-status" src="/assets/images/active.png"></td>
+                        <td>
+                            <div>
+                                <img src="/assets/images/icon-action-info.png ">
+                                <img src="/assets/images/icon-action-block.png ">
+                                <img src="/assets/images/icon-action-delete_forever.png ">
+                            </div>
+                        </td>
+                    </tr>
 
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <div id="sec-4" style="height: 27vh;">
-                            <div class="box">
-                                <div id="group-2-1" class="group-2">
-                                    <h1>New students</h1>
-                                    <p>This year</p>
-                                </div>
-                                <div id="group-2-2" class="group-2 group-2-2">
-                                    <p>This month</p>
-                                    <h1>475 273</h1>
-                                </div>
-                                <canvas id="myChart4" style="width:200px ;height:100px"></canvas>
+                </tbody>
+            </table>
 
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        </div>
+        <div class="box-sort">
+            <select class="form-select" aria-label="Default select example">
+                <option selected style="display: none;">Sort by</option>
+                <option value="1">Course</option>
+                <option value="2">Teacher</option>
+                <option value="3">Status</option>
+                <option value="3">Date</option>
+            </select>
+        </div>
+        <div class="box-radio">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                    Course
+                </label>
             </div>
-            <div class="col-4">
-                <div class="row">
-                    <div class="col">
-                        <div id="sec-5">
-                            <div class="box">
-                                <img src="/assets/images/icon-teacher.png" alt="" class="icon-1">
-                                <div class="group-1">
-                                    <h1>1478 286</h1>
-                                    <p>Total visits</p>
-                                    <img src="/assets/images/icon-trending-down.png">
-                                    <span>4.07%</span>
-                                    <span>&ThinSpace;Last month</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row" style="margin-top: 3vh;">
-                    <div class="col">
-
-                        <div id="sec-3" style="height: 57vh">
-                            <div class="box">
-
-                                <div id="group-3-0" class="group-3">
-                                    <h1>Top Subject</h1><br>
-                                    <p>28 subjects, 1400 Courses</p>
-                                </div>
-
-                                <div class="table">
-                                    <div id="group-3-0" class="group-3">
-                                        <h1>Math</h1><span class="tag-count">8.2k</span><br>
-                                        <p>Natural science</p><span class="tag-inc">+472</span>
-                                    </div>
-                                    <div id="group-3-0" class="group-3">
-                                        <h1>Physics</h1><span class="tag-count">8.2k</span><br>
-                                        <p>Natural science</p><span class="tag-inc">+472</span>
-                                    </div>
-                                    <div id="group-3-0" class="group-3">
-                                        <h1>Chemistry</h1><span class="tag-count">8.2k</span><br>
-                                        <p>Natural science</p><span class="tag-inc">+472</span>
-                                    </div>
-                                    <div id="group-3-0" class="group-3">
-                                        <h1>Deep Learning</h1><span class="tag-count">8.2k</span><br>
-                                        <p>AI</p><span class="tag-inc">+472</span>
-                                    </div>
-                                    <div id="group-3-0" class="group-3">
-                                        <h1>Machine Learning</h1><span class="tag-count">8.2k</span><br>
-                                        <p>AI</p><span class="tag-inc">+472</span>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <label class="form-check-label" for="flexRadioDefault2">
+                    Teacher
+                </label>
+            </div>
+        </div>
+        <div class="box-select">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    Math
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    Physics
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    AI
+                </label>
             </div>
         </div>
     </div>
-
+    {{> pagination }}
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.2/dist/chart.min.js"></script>
+</div>

@@ -1,460 +1,264 @@
 <div class="container">
-
+    <p id="title">
+        Statistics
+    </p>
+    <div id="box-radio">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="statisticType" value="Course" checked>
+            <label class="form-check-label" for="flexRadioDefault1">
+                Course
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="statisticType" value="Teacher">
+            <label class="form-check-label" for="flexRadioDefault2">
+                Teacher
+            </label>
+        </div>
+    </div>
     <div class="sec-title">
-        <p id="title">Search</p>
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">
-                <img src="/assets/images/icon-search.png">
-            </span>
-            <input type="text" class="form-control" placeholder="FIND ITEMS" aria-label="Username"
-                aria-describedby="basic-addon1">
-        </div>
-        <button id="btn-stat">Search</button>
+        <h1>Statistics</h1>
+        <button id="btn-stat">statistic</button>
     </div>
 
-    <div id="fram-1" style="display: none;">
-        <div id="main-content">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th class="text-center">Course</th>
-                        <th class="text-center">Teacher</th>
-                        <th class="text-center">Status</th>
-                        <th class="text-center">Date</th>
-                        <th class="text-center">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <img class="icon-sub" style="background-image: url(/assets/images/sub-logo-1.jpg)">
-                            Matdematics for Machine Learning Specialization
-                        </td>
-                        <td>
-                            <img class="icon-tea"
-                                style="background-image: url(/assets/images/teacher1.jpg);background-size: 67px">
-                            David Dye
-                        </td>
-                        <td><img class="icon-status" src="/assets/images/active.png"></td>
-                        <td>18.05.2020</td>
-                        <td>
-                            <div>
-                                <img src="/assets/images/icon-action-info.png ">
-                                <img src="/assets/images/icon-action-block.png ">
-                                <img src="/assets/images/icon-action-delete_forever.png ">
+    <div role="course" id="main-content" class="main-content container">
+        <div class="row">
+            <div class="col-8">
+                <div class="row">
+                    <div id="sec-1">
+                        <div class="row">
+                            <div class="col">
+                                <div class="box">
+                                    <img src="/assets/images/icon-course.png" alt="" class="icon-1">
+                                    <div class="group-1">
+                                        <h1>{{totalCourse}} courses</h1>
+                                        <p>Total Course</p>
+                                        <img src="/assets/images/icon-trending-up.png">
+                                        <span>{{incCourse}}%</span>
+                                        <span>&ThinSpace;This month</span>
+                                    </div>
+                                </div>
                             </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img class="icon-sub" style="background-image: url(/assets/images/sub-logo-1.jpg)">
-                            Matdematics for Machine Learning Specialization
-                        </td>
-                        <td>
-                            <img class="icon-tea"
-                                style="background-image: url(/assets/images/teacher1.jpg);background-size: 67px">
-                            David Dye
-                        </td>
-                        <td><img class="icon-status" src="/assets/images/active.png"></td>
-                        <td>18.05.2020</td>
-                        <td>
-                            <div>
-                                <img src="/assets/images/icon-action-info.png ">
-                                <img src="/assets/images/icon-action-block.png ">
-                                <img src="/assets/images/icon-action-delete_forever.png ">
+                            <div class="col">
+                                <div class="box">
+                                    <img src="/assets/images/icon-student.png" alt="" class="icon-1">
+                                    <div class="group-1">
+                                        <h1>{{avgStudentC}} students</h1>
+                                        <p>Number of student per course</p>
+                                        <img src="/assets/images/icon-trending-up.png">
+                                        <span>{{avgStudentCL}}%</span>
+                                        <span>&ThinSpace;This month</span>
+                                    </div>
+                                </div>
                             </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img class="icon-sub" style="background-image: url(/assets/images/sub-logo-1.jpg)">
-                            Matdematics for Machine Learning Specialization
-                        </td>
-                        <td>
-                            <img class="icon-tea"
-                                style="background-image: url(/assets/images/teacher1.jpg);background-size: 67px">
-                            David Dye
-                        </td>
-                        <td><img class="icon-status" src="/assets/images/active.png"></td>
-                        <td>18.05.2020</td>
-                        <td>
-                            <div>
-                                <img src="/assets/images/icon-action-info.png ">
-                                <img src="/assets/images/icon-action-block.png ">
-                                <img src="/assets/images/icon-action-delete_forever.png ">
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img class="icon-sub" style="background-image: url(/assets/images/sub-logo-1.jpg)">
-                            Matdematics for Machine Learning Specialization
-                        </td>
-                        <td>
-                            <img class="icon-tea"
-                                style="background-image: url(/assets/images/teacher1.jpg);background-size: 67px">
-                            David Dye
-                        </td>
-                        <td><img class="icon-status" src="/assets/images/active.png"></td>
-                        <td>18.05.2020</td>
-                        <td>
-                            <div>
-                                <img src="/assets/images/icon-action-info.png ">
-                                <img src="/assets/images/icon-action-block.png ">
-                                <img src="/assets/images/icon-action-delete_forever.png ">
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img class="icon-sub" style="background-image: url(/assets/images/sub-logo-1.jpg)">
-                            Matdematics for Machine Learning Specialization
-                        </td>
-                        <td>
-                            <img class="icon-tea"
-                                style="background-image: url(/assets/images/teacher1.jpg);background-size: 67px">
-                            David Dye
-                        </td>
-                        <td><img class="icon-status" src="/assets/images/active.png"></td>
-                        <td>18.05.2020</td>
-                        <td>
-                            <div>
-                                <img src="/assets/images/icon-action-info.png ">
-                                <img src="/assets/images/icon-action-block.png ">
-                                <img src="/assets/images/icon-action-delete_forever.png ">
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img class="icon-sub" style="background-image: url(/assets/images/sub-logo-1.jpg)">
-                            Matdematics for Machine Learning Specialization
-                        </td>
-                        <td>
-                            <img class="icon-tea"
-                                style="background-image: url(/assets/images/teacher1.jpg);background-size: 67px">
-                            David Dye
-                        </td>
-                        <td><img class="icon-status" src="/assets/images/active.png"></td>
-                        <td>18.05.2020</td>
-                        <td>
-                            <div>
-                                <img src="/assets/images/icon-action-info.png ">
-                                <img src="/assets/images/icon-action-block.png ">
-                                <img src="/assets/images/icon-action-delete_forever.png ">
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img class="icon-sub" style="background-image: url(/assets/images/sub-logo-1.jpg)">
-                            Matdematics for Machine Learning Specialization
-                        </td>
-                        <td>
-                            <img class="icon-tea"
-                                style="background-image: url(/assets/images/teacher1.jpg);background-size: 67px">
-                            David Dye
-                        </td>
-                        <td><img class="icon-status" src="/assets/images/active.png"></td>
-                        <td>18.05.2020</td>
-                        <td>
-                            <div>
-                                <img src="/assets/images/icon-action-info.png ">
-                                <img src="/assets/images/icon-action-block.png ">
-                                <img src="/assets/images/icon-action-delete_forever.png ">
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img class="icon-sub" style="background-image: url(/assets/images/sub-logo-1.jpg)">
-                            Matdematics for Machine Learning Specialization
-                        </td>
-                        <td>
-                            <img class="icon-tea"
-                                style="background-image: url(/assets/images/teacher1.jpg);background-size: 67px">
-                            David Dye
-                        </td>
-                        <td><img class="icon-status" src="/assets/images/active.png"></td>
-                        <td>18.05.2020</td>
-                        <td>
-                            <div>
-                                <img src="/assets/images/icon-action-info.png ">
-                                <img src="/assets/images/icon-action-block.png ">
-                                <img src="/assets/images/icon-action-delete_forever.png ">
-                            </div>
-                        </td>
-                    </tr>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 3vh;">
+                    <div class="col">
+                        <div id="sec-2" style="height: 27vh;">
+                            <div class="box">
+                                <div id="group-2-1" class="group-2">
+                                    <h1 style="margin-bottom: 0rem;">New Courses</h1>
+                                    <p>This year</p>
+                                </div>
+                                <div id="group-2-2" class="group-2 group-2-2">
+                                    <p style="margin-bottom: 0;">This month</p>
+                                    <h1 id="newCoursesThisMonth" style="float: right;"></h1>
+                                </div>
+                                <canvas id="myChart" width="720" height="150"></canvas>
 
-                </tbody>
-            </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div id="sec-4" style="height: 27vh;">
+                            <div class="box">
+                                <div id="group-2-1" class="group-2">
+                                    <h1 style="margin-bottom: 0;">New Students</h1>
+                                    <p>This year</p>
+                                </div>
+                                <div id="group-2-2" class="group-2 group-2-2">
+                                    <p style="margin-bottom: 0;">This month</p>
+                                    <h1 class="newStudentsThisMonth" style="float: right;"></h1>
+                                </div>
+                                <canvas id="myChart2" width="720" height="150"></canvas>
 
 
-        </div>
-        <div class="box-sort">
-            <select class="form-select" aria-label="Default select example">
-                <option selected style="display: none;">Sort by</option>
-                <option value="1">Course</option>
-                <option value="2">Teacher</option>
-                <option value="3">Status</option>
-                <option value="3">Date</option>
-            </select>
-        </div>
-        <div class="box-radio">
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                <label class="form-check-label" for="flexRadioDefault1">
-                    Course
-                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                <label class="form-check-label" for="flexRadioDefault2">
-                    Teacher
-                </label>
-            </div>
-        </div>
-        <div class="box-select">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault">
-                    Math
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault">
-                    Physics
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault">
-                    AI
-                </label>
+            <div class="col-4">
+                <div class="row">
+                    <div class="col">
+                        <div id="sec-5">
+                            <div class="box">
+                                <img src="/assets/images/dollarX.png" alt="" class="icon-1">
+                                <div class="group-1">
+                                    <h1>{{avgIncomeC}} $</h1>
+                                    <p>Income per course</p>
+                                    <img src="/assets/images/icon-trending-down.png">
+                                    <span>{{avgIncomeCL}}%</span>
+                                    <span>&ThinSpace;This month</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 3vh;">
+                    <div class="col">
+
+                        <div id="sec-3" style="height: 57vh">
+                            <div class="box">
+
+                                <div id="group-3-0" class="group-3">
+                                    <h1>Subject chart</h1><br>
+                                    <p><p id="numSub"></p> subjects, {{totalCourse}} Courses</span>
+                                </div>
+
+                                <div class="table">
+                                    <canvas id="subjectChart"></canvas>
+                                    <!-- width="720" height="150" -->
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-
-    <div id="fram-2">
-        <div id="main-content">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th class="text-center">Teacher</th>
-                        <th class="text-center">Subject</th>
-                        <th class="text-center">Human race</th>
-                        <th class="text-center">Status</th>
-                        <th class="text-center">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <img class="icon-tea"
-                                style="background-image: url(/assets/images/teacher1.jpg);background-size: 67px">
-                            David Dye
-                        </td>
-                        <td class="text-center">Math</td>
-                        <td class="text-center">American</td>
-                        <td class="text-center"><img class="icon-status" src="/assets/images/active.png"></td>
-                        <td>
-                            <div>
-                                <img src="/assets/images/icon-action-info.png ">
-                                <img src="/assets/images/icon-action-block.png ">
-                                <img src="/assets/images/icon-action-delete_forever.png ">
+    <div role="teacher" id="main-content2" class=" main-content container" style="display: none;">
+        <div class="row">
+            <div class="col-8">
+                <div class="row">
+                    <div id="sec-1">
+                        <div class="row">
+                            <div class="col">
+                                <div class="box">
+                                    <img src="/assets/images/icon-course.png" alt="" class="icon-1">
+                                    <div class="group-1">
+                                        <h1>{{totalTeacher}} teachers</h1>
+                                        <p>Total Teacher</p>
+                                        <img src="/assets/images/icon-trending-up.png">
+                                        <span>{{incTeacher}}%</span>
+                                        <span>&ThinSpace;This month</span>
+                                    </div>
+                                </div>
                             </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img class="icon-tea"
-                                style="background-image: url(/assets/images/teacher1.jpg);background-size: 67px">
-                            David Dye
-                        </td>
-                        <td class="text-center">Math</td>
-                        <td class="text-center">American</td>
-                        <td class="text-center"><img class="icon-status" src="/assets/images/active.png"></td>
-                        <td>
-                            <div>
-                                <img src="/assets/images/icon-action-info.png ">
-                                <img src="/assets/images/icon-action-block.png ">
-                                <img src="/assets/images/icon-action-delete_forever.png ">
+                            <div class="col">
+                                <div class="box">
+                                    <img src="/assets/images/icon-student.png" alt="" class="icon-1">
+                                    <div class="group-1">
+                                        <h1>{{avgCourseT}} courses</h1>
+                                        <p>Average of courses per teacher</p>
+                                        <img src="/assets/images/icon-trending-up.png">
+                                        <span>{{avgCourseTL}}%</span>
+                                        <span>&ThinSpace;This month</span>
+                                    </div>
+                                </div>
                             </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img class="icon-tea"
-                                style="background-image: url(/assets/images/teacher1.jpg);background-size: 67px">
-                            David Dye
-                        </td>
-                        <td class="text-center">Math</td>
-                        <td class="text-center">American</td>
-                        <td class="text-center"><img class="icon-status" src="/assets/images/active.png"></td>
-                        <td>
-                            <div>
-                                <img src="/assets/images/icon-action-info.png ">
-                                <img src="/assets/images/icon-action-block.png ">
-                                <img src="/assets/images/icon-action-delete_forever.png ">
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img class="icon-tea"
-                                style="background-image: url(/assets/images/teacher1.jpg);background-size: 67px">
-                            David Dye
-                        </td>
-                        <td class="text-center">Math</td>
-                        <td class="text-center">American</td>
-                        <td class="text-center"><img class="icon-status" src="/assets/images/active.png"></td>
-                        <td>
-                            <div>
-                                <img src="/assets/images/icon-action-info.png ">
-                                <img src="/assets/images/icon-action-block.png ">
-                                <img src="/assets/images/icon-action-delete_forever.png ">
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img class="icon-tea"
-                                style="background-image: url(/assets/images/teacher1.jpg);background-size: 67px">
-                            David Dye
-                        </td>
-                        <td class="text-center">Math</td>
-                        <td class="text-center">American</td>
-                        <td class="text-center"><img class="icon-status" src="/assets/images/active.png"></td>
-                        <td>
-                            <div>
-                                <img src="/assets/images/icon-action-info.png ">
-                                <img src="/assets/images/icon-action-block.png ">
-                                <img src="/assets/images/icon-action-delete_forever.png ">
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img class="icon-tea"
-                                style="background-image: url(/assets/images/teacher1.jpg);background-size: 67px">
-                            David Dye
-                        </td>
-                        <td class="text-center">Math</td>
-                        <td class="text-center">American</td>
-                        <td class="text-center"><img class="icon-status" src="/assets/images/active.png"></td>
-                        <td>
-                            <div>
-                                <img src="/assets/images/icon-action-info.png ">
-                                <img src="/assets/images/icon-action-block.png ">
-                                <img src="/assets/images/icon-action-delete_forever.png ">
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img class="icon-tea"
-                                style="background-image: url(/assets/images/teacher1.jpg);background-size: 67px">
-                            David Dye
-                        </td>
-                        <td class="text-center">Math</td>
-                        <td class="text-center">American</td>
-                        <td class="text-center"><img class="icon-status" src="/assets/images/active.png"></td>
-                        <td>
-                            <div>
-                                <img src="/assets/images/icon-action-info.png ">
-                                <img src="/assets/images/icon-action-block.png ">
-                                <img src="/assets/images/icon-action-delete_forever.png ">
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img class="icon-tea"
-                                style="background-image: url(/assets/images/teacher1.jpg);background-size: 67px">
-                            David Dye
-                        </td>
-                        <td class="text-center">Math</td>
-                        <td class="text-center">American</td>
-                        <td class="text-center"><img class="icon-status" src="/assets/images/active.png"></td>
-                        <td>
-                            <div>
-                                <img src="/assets/images/icon-action-info.png ">
-                                <img src="/assets/images/icon-action-block.png ">
-                                <img src="/assets/images/icon-action-delete_forever.png ">
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img class="icon-tea"
-                                style="background-image: url(/assets/images/teacher1.jpg);background-size: 67px">
-                            David Dye
-                        </td>
-                        <td class="text-center">Math</td>
-                        <td class="text-center">American</td>
-                        <td class="text-center"><img class="icon-status" src="/assets/images/active.png"></td>
-                        <td>
-                            <div>
-                                <img src="/assets/images/icon-action-info.png ">
-                                <img src="/assets/images/icon-action-block.png ">
-                                <img src="/assets/images/icon-action-delete_forever.png ">
-                            </div>
-                        </td>
-                    </tr>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 3vh;">
+                    <div class="col">
+                        <div id="sec-2" style="height: 27vh;">
+                            <div class="box">
+                                <div id="group-2-1" class="group-2">
+                                    <h1 style="margin-bottom: 0.2rem;">New Teachers</h1>
+                                    <p>This year</p>
+                                </div>
+                                <div id="group-2-2" class="group-2 group-2-2">
+                                    <p style="margin-bottom: 0;">This month</p>
+                                    <h1 id="newTeachersThisMonth" style="float: right;"></h1>
+                                </div>
+                                <canvas id="myChart3" width="720" height="150"></canvas>
 
 
-                </tbody>
-            </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div id="sec-4" style="height: 27vh;">
+                            <div class="box">
+                                <div id="group-2-1" class="group-2">
+                                    <h1 style="margin-bottom: 0;">New students</h1>
+                                    <p>This year</p>
+                                </div>
+                                <div id="group-2-2" class="group-2 group-2-2">
+                                    <p style="margin-bottom: 0;">This month</p>
+                                    <h1 class="newStudentsThisMonth" style="float: right;"></h1>
+                                </div>
+                                <canvas id="myChart4" width="720" height="150"></canvas>
 
 
-        </div>
-        <div class="box-sort">
-            <select class="form-select" aria-label="Default select example">
-                <option selected style="display: none;">Sort by</option>
-                <option value="1">Course</option>
-                <option value="2">Teacher</option>
-                <option value="3">Status</option>
-                <option value="3">Date</option>
-            </select>
-        </div>
-        <div class="box-radio">
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                <label class="form-check-label" for="flexRadioDefault1">
-                    Course
-                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                <label class="form-check-label" for="flexRadioDefault2">
-                    Teacher
-                </label>
-            </div>
-        </div>
-        <div class="box-select">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault">
-                    Math
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault">
-                    Physics
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault">
-                    AI
-                </label>
+            <div class="col-4">
+                <div class="row">
+                    <div class="col">
+                        <div id="sec-5">
+                            <div class="box">
+                                <img src="/assets/images/dollarX.png" alt="" class="icon-1">
+                                <div class="group-1">
+                                    <h1>{{avgIncomeT}} $</h1>
+                                    <p>Income per teacher</p>
+                                    <img src="/assets/images/icon-trending-down.png">
+                                    <span>{{avgIncomeTL}}%</span>
+                                    <span>&ThinSpace;This month</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 3vh;">
+                    <div class="col">
+
+                        <div id="sec-3" style="height: 57vh">
+                            <div class="box">
+
+                                <div id="group-3-0" class="group-3">
+                                    <h1>Teacher chart</h1><br>
+                                    <p><p id="numUni"></p> university, {{totalTeacher}} teachers</span>
+
+                                </div>
+
+                                <div class="table">
+                                    <canvas id="teacherChart"></canvas>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    {{> pagination }}
+    <div id="dataNewCourses" style="display: none;">{{dataNewCourses}}</div>
+    <div id="dataNewStudents" style="display: none;">{{dataNewStudents}}</div>
+    <div id="dataNewTeachers" style="display: none;">{{dataNewTeachers}}</div>
+    <div id="subjectChartData" style="display: none;">{{subjectChart}}</div>
+    <div id="teacherChartData" style="display: none;">{{teacherChart}}</div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.2/dist/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+        integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="\assets\js\palette.js"></script>
+
+</div>

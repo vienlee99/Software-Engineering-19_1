@@ -32,7 +32,6 @@ class DashboardController {
       incomeLastyear,
       totalSubject,
       topCourses,
-      incTopCourse,
     ] = await Promise.all([
       courseModel.count({}), //totalCourse
       userModel.find({ typeuserId: 1 }).count(), // totalTeacher
@@ -111,11 +110,12 @@ class DashboardController {
             },
           },
         ])
-        .sort({ studentCount: -1 })
+        .sort({ total: -1 })
         .limit(5),
     ]);
     incomeNow = incomeNow.length ? incomeNow[0].total : 0;
     incomeLastyear = incomeLastyear.length ? incomeLastyear[0].total : 0;
+    console.log(topCourses)
 
     let topCourseId = topCourses.map((x) => x._id);
     let inc = await courseModel.aggregate([
@@ -134,7 +134,8 @@ class DashboardController {
       },
     ]);
     topCourses = topCourses.map((course) => {
-      course.inc = inc.find((x) => x._id.equals(course._id)).inc;
+      let find = inc.find((x) => x._id.equals(course._id));
+      course.inc = find?find.inc:0;
       return course;
     });
 
