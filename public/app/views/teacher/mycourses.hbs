@@ -7,17 +7,21 @@
             {{#each courses}}
             <div class="col-sm-6 col-lg-4">
                 <div class="card card-course-item">
-                    <a href="#">
-                        <img src="{{this.image}}" class="card-img-top" alt="{{this.name}}">
+                    <a href="/teacher/{{this.slug}}">
+                        <img src="{{this.image}}" class="card-img-top my-img" alt="{{this.name}}">
                     </a>
                     <div class="card-body">
-                        <a href="#">
+                        <a href="/teacher/{{this.slug}}">
                             <h5 class="card-title">{{this.name}}</h5>
                         </a>
                         <p class="card-text">{{this.description}}</p>
-                        <a href="/teacher/edit/{{this._id}}" class="btn btn-primary">Chỉnh sửa</a>
-                        <a href="#" class="btn btn-primary btn-tinhtrang">{{this.status}}</a>
-                        <div class="btn btn-primary btn-block my-3">Tham gia</div>
+                        <div class="btn btn-primary btn-block my-3">
+                            <a href="/teacher/edit/{{this._id}}" class="edit-coures">Chỉnh sửa</a>
+                        </div>
+                        {{!-- <a href="#" class="btn btn-primary btn-tinhtrang">{{this.status}}</a> --}}
+                        <a href="/teacher/{{this.slug}}">
+                            <div class="btn btn-primary btn-success btn-block my-3">Tham gia</div>
+                        </a>
                     </div>
                 </div>
             </div>

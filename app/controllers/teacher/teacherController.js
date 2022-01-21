@@ -75,6 +75,19 @@ class TeacherContrller {
         .then(() => res.redirect('mycourses'))
         .catch(next);
     }
+
+    // [GET] /teacher/:slug
+    show(req, res, next){
+        Course.findOne({ slug: req.params.slug}).lean()
+        .then(courses => {
+            res.render("teacher/show", {
+                layout: "teacher/teacher_layout",
+                path: req.originalUrl.split("?").shift()+'dashboard',
+                courses: courses,
+              });
+        })
+        .catch(next);
+    }
 }
 
 module.exports = new TeacherContrller;
