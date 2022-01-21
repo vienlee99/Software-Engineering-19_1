@@ -1,4 +1,5 @@
 const Course = require("../../models/courseModel")
+var a = require('mongodb').ObjectId;
 
 class TeacherContrller {
 
@@ -66,6 +67,13 @@ class TeacherContrller {
             .catch(error => {
 
             })
+    }
+
+    // [PUT] /teacher/:id
+    update(req, res, next){
+        Course.updateOne({ _id: req.params.id }, req.body)
+        .then(() => res.redirect('mycourses'))
+        .catch(next);
     }
 }
 

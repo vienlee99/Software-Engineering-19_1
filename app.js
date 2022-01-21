@@ -3,6 +3,9 @@ const express = require("express"),
   port = 8000,
   session = require("express-session");
 
+// methodOveride
+const methodOverride = require('method-override');
+
 // app use
 app.use(express.static(__dirname + "/public"));
 app.use(express.urlencoded({ extended: true }));
@@ -15,7 +18,9 @@ app.use(
     cookie: { maxAge: 3600 * 12 },
   })
 );
-//
+
+//use method Overide
+app.use(methodOverride('_method'));
 
 // config
 app.set("views", "./public/app/views");

@@ -6,6 +6,10 @@ const uploadRoute = require("./upload");
 const pickadateRoute = require("./pickadate");
 const storeRoute = require("./store");
 
+const teacherContrller = require('../../controllers/teacher/teacherController');
+router.put('/:id', teacherContrller.update);
+
+
 router.use(function (req, res, next) {
 
   router.use("/pickadate", pickadateRoute);
