@@ -9,12 +9,12 @@ const router = require("express").Router(),
 // zzzzzzzzzzzzzzzzz Bỏ qua đăng nhập zzzzzzzzzzzzzzz
 router.use(function (req, res, next) {
   req.session.user = {
-    _id: 4,
+    _id: '61e41d50ad13e252ddde3242',
     username: "root",
     password: "$2b$10$UCaXZw6DL6Y1JrWZFRPvtODvd2Z1Apr0hcHrPXH2fyKS0GHK8kabi", // 123456
     mobilephone: "0812540145",
-    typeuserId: 0, // loại người dùng 0-admin 1-teacher 2-student
-    remainningBalance: 0,
+    typeuserId: 2, // loại người dùng 0-admin 1-teacher 2-student
+    remainningBalance: 1000000,
   };
   next();
 });

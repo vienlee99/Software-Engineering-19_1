@@ -32,7 +32,9 @@ const CourseSchema = new mongoose.Schema({
     type: Date,
     required: true,
   },
-
+  imagePath: {
+    type: String,
+  },
   studentId: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: "teachers",

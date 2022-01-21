@@ -1,87 +1,99 @@
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 <style>
-  input[type=text], select { padding: 12px 20px; margin: 8px 0; display:
-  inline-block; border: 1px solid #ccc; border-radius: 4px; box-sizing:
-  border-box; }
+  input[type=text],
+  select {
+    padding: 12px 20px;
+    margin: 8px 0;
+    display:
+      inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing:
+      border-box;
+  }
 </style>
 
-<div
-  style="position: absolute;
+<div style="position: absolute;
 width: 400px;
 height: 500px;
 left: 200px;
-top: 175px;"
->
-  <img src="../../../assets/images/Math-Hinhhoc12.png" alt="Math1" />
+top: 175px;">
+  <img src="/assets/images/{{imagePath}}" alt="Math1" />
 </div>
 
-<div
-  style="display: flex;
+<div style="display: flex;
 width:1000px;
 flex-direction: column;
 align-items: flex-start;
 position: absolute;
 left: 550px;
-top:150px"
->
-  <div
-    style="position: static;
-font-size:30px; 
+top:150px">
+  <div style="position: static;
+font-size:40px; 
+font-weight: 600;
 left: 0px;
 flex: none;
 order: 0;
-flex-grow: 0;"
-  >
-    <p>Khóa học hình học 12 từ cơ bản đến nâng cao</p>
+flex-grow: 0;">
+    <p>{{name}}</p>
   </div>
-  <div
-    style="position: static;
+  <div style="position: static;
 font-size:35px; 
 left: 0px;
 flex: none;
 order: 1;
-flex-grow: 0;"
-  >
-    <p><b>1.000.000đ</b></p>
+flex-grow: 0;">
+    <p style="display:inline"><b>{{cost}} đ</b></p>
+    <button style="display:inline" type="button" class="btn btn-lg btn-danger" data-toggle="popover"
+      title="Tài khoản của bạn còn {{remainningBalance}} đ"
+      data-content="And here's some amazing content. It's very engaging. Right?"><i style="font-size:24px"
+        class="fas">&#xf555;</i>
+    </button>
   </div>
-  <div
-    style="position: static;
+  <div style="position: static;
 font-size:20px; 
 left: 0px;
 flex: none;
 order: 2;
 flex-grow: 0;
-padding-top:20px;"
-  >
-    <div style="display: flex;">
-      <div>
-        <input
-          type="text"
-          id="fname"
-          name="firstname"
-          placeholder="Nhập mã xác nhận"
-        />
-      </div>
-      <div style="padding-left: 40px;padding-top:10px;"><button
-          style="
-        font-size:30px;
-        color:white;
-        background-color: #B12704;"
-        >Gửi mã</button></div>
-    </div>
+padding-top:20px;">
+
   </div>
-  <div
-    style="position: static;
+  <div style="position: static;
 left: 0px;
 flex: none;
 order: 3;
 flex-grow: 0;
-padding-top:50px;"
-  >
-    <button
-      style="
+padding-top:50px;">
+    <button id="thanhtoan" class="btn btn-danger" style="height: 4rem; width: 9rem; font-size: 20px;" {{! style="
         font-size:30px;
         color:white;
-        background-color: #B12704;"
-    >Thanh toán</button>
+        background-color: #B12704;" }}>
+      Thanh toán
+    </button>
+    <p id="courseId" style="display: none;">{{courseId}}</p>
+    <p id="userId" style="display: none;">{{userId}}</p>
+    <script>
+      $('#thanhtoan').click(function (){
+        let courseId = $('#courseId').text()
+        let userId = $('#userId').text()
+         $.ajax({
+          type: 'post',
+          url: '/payment/pay',
+          data: {
+            courseId: courseId,
+            userId: userId,
+          },
+          succcess: function (data) {
+            alert(data)
+          }
+        }) 
+      })
+    </script>
+
   </div>
 </div>
+<script>
+
+  $(function () { $('[data-toggle="popover"]').popover() })
+</script>
