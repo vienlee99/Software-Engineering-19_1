@@ -5,12 +5,8 @@ router.get("/", (req, res) => {
   searchController.index(req, res);
 });
 
-router.post("/", (req, res) => {
-  //   if (searchController.login(req, res)) {
-  //     res.redirect("../");
-  //   } else {
-  //     res.redirect("/");
-  //   }
+router.post("/", async (req, res) => {
+  await searchController.search(req, res);
 });
 
 module.exports = router;
