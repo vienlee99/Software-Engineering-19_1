@@ -18,6 +18,7 @@ class TeacherContrller {
   // [GET] /teacher/mycourses
   mycourses(req, res, next) {
     //   console.log(req.session.user)
+    Course.find({})
     // Course.aggregate([
     //   //incomeNow
     //   {
@@ -34,15 +35,15 @@ class TeacherContrller {
     //     },
     //   },
     // ])
-    //   .lean()
-    //   .then((courses) => {
-    //     res.render("teacher/mycourses", {
-    //       layout: "teacher/teacher_layout",
-    //       path: req.originalUrl.split("?").shift() + "dashboard",
-    //       courses: courses,
-    //     });
-    //   })
-    //   .catch(next);
+      .lean()
+      .then((courses) => {
+        res.render("teacher/mycourses", {
+          layout: "teacher/teacher_layout",
+          path: req.originalUrl.split("?").shift() + "dashboard",
+          courses: courses,
+        });
+      })
+      .catch(next);
   }
 
   // [GET] /teacher/edit

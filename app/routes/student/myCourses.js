@@ -5,6 +5,7 @@ const router = require("express").Router(),
 router.use("/rating", rating);
 
 router.get("/", (req, res) => {
+  
   homepageController.index(req, res);
 });
 // router.post("/", (req, res) => {

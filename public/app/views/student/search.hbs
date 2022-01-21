@@ -303,64 +303,35 @@ overflow-y:scroll;
 overflow-x:hidden;
 "
 >
-  <div
-    style="position: static;
-height: 160px;
-left: 0px;
-flex: none;
-order: 0;
-flex-grow: 0;"
-  >
-    <img
-      src="../../../assets/images/Math-Hinhhoc12.png"
-      alt="Math"
-      style="position: absolute;
-height: 150px;
-left: 0px;
-top: 0px;"
-    />
-    <div
-      style="
-    display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px;
-position: absolute;
-width: 1000px;
-height: 150px;
-left: 200px;
-top: 10px;"
+{{#if msg}}
+<div class="mb-5"></div>
+<h2>{{msg}}</h2>
+{{/if}}
+  {{#each course}}
+    <div 
+    style="position: relative;height: 160px;left: 0px;flex: none;order: 0;flex-grow: 0;"
     >
-      <div
-        style="position: static;
-        height:25px;
-left: 0px;
-display: flex;
-align-items: center;
-color: #18191A;
-flex: none;
-order: 0;
-flex-grow: 0;
-margin: 8px 0px;"
+      <img
+        src="/assets/images/{{imagePath}}"
+        alt="Math"
+        style="position: absolute;height: 150px;left: 0px;top: 0px;"
+      />
+      <div 
+      style=" display: flex;flex-direction: column;align-items: flex-start;padding: 0px;position: absolute;width: 1000px;height: 150px;left: 200px;top: 10px;"
       >
-        <p>Hình học 12 - Khó mà dễ</p>
-      </div>
-      <div
-        style="position: static;
-        height:25px;
-left: 0px;
-display: flex;
-align-items: center;
-color: #B12704;
-flex: none;
-order: 1;
-flex-grow: 0;
-margin: 8px 0px;"
-      >
-        <p><b>Chi phí khóa học: 1.000.000đ</b></p>
-      </div>
-      <div
-        style="position: static;
+        <div
+          style="position: static;height:25px;left: 0px;display: flex;align-items: center;color: #18191A;flex: none;order: 0;flex-grow: 0;margin: 8px 0px;"
+        >
+          <p>{{name}}</p>
+        </div>
+        <div
+          style="position: static;
+        height:25px;left: 0px;display: flex;align-items: center;color: #B12704;flex: none;order: 1;flex-grow: 0;margin: 8px 0px;"
+        >
+          <p><b>Chi phí khóa học: {{cost}}đ</b></p>
+        </div>
+        <div
+          style="position: static;
 height: 25px;
 left: 0px;
 display: flex;
@@ -370,11 +341,19 @@ flex: none;
 order: 2;
 flex-grow: 0;
 margin: 8px 0px;"
-      >
-        <button style="size:30px;color:white;background-color: #B12704;">Đăng ký</button>
+        >
+          <button style="size:30px;color:white;background-color: #B12704;">
+            <a href="/course_detail?id={{_id}}"
+              style="text-decoration: none; color:white;"
+              
+            >Đăng ký</a>
+          </button>
+        </div>
       </div>
     </div>
-  </div>
+    <div class="mb-4"></div>
+  {{/each}}
+  {{! 
   <div
     style="position: static;
 height: 160px;
@@ -662,5 +641,5 @@ margin: 8px 0px;"
         <button style="size:30px;color:white;background-color: #B12704;">Đăng ký</button>
       </div>
     </div>
-  </div>
+  </div> }}
 </div>

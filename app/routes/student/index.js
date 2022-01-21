@@ -12,10 +12,14 @@ const router = require("express").Router(),
 router.use("/", homepage);
 router.use("/course_detail", course_detail);
 router.use("/myCourses", myCourses);
-router.use("/search", function (req, res) {
+router.use("/search", async (req, res) => {
   let keyword = req.query.q;
+  req.course = await coursesModel.find({
+    name: { $regex: keyword, $options: "i" },
+  });
+  search(req, res);
 });
-router.use("/", homepage);
+router.use("/payment", payment);
 router.use("/", homepage);
 
 module.exports = router;
