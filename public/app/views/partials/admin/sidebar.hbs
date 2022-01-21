@@ -4,40 +4,52 @@
     <ul class="nav flex-column">
       <li class="nav-item">
         <a class="nav-link active" aria-current="page" href="/">
-          {{#ifStr where 'home' }} 
+          {{#ifStr where 'home' }}
           <span>
             <img class="icon-choose" src="/assets/images/icon-choose.png">
-          </span> 
+          </span>
           <img src="/assets/images/icon-home-on.png">
-          {{else}} 
+          {{else}}
           <img src="/assets/images/icon-home-off.png">
           {{/ifStr}}
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link active" aria-current="page" href="/search">
-          {{#ifStr where 'search' }} 
+          {{#ifStr where 'search' }}
           <span>
             <img class="icon-choose" src="/assets/images/icon-choose.png">
-          </span> 
+          </span>
           <img src="/assets/images/icon-search-on.png">
-          {{else}} 
+          {{else}}
           <img src="/assets/images/icon-search-off.png">
           {{/ifStr}}
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link active" aria-current="page" href="/statistic">
-          {{#ifStr where 'statistic' }} 
+          {{#ifStr where 'statistic' }}
           <span>
             <img class="icon-choose" src="/assets/images/icon-choose.png">
-          </span> 
+          </span>
           <img src="/assets/images/icon-statistic-on.png" alt="" srcset="">
-          {{else}} 
+          {{else}}
           <img src="/assets/images/icon-statistic-off.png" alt="" srcset="">
           {{/ifStr}}
         </a>
       </li>
     </ul>
+    <a href="/signout"><img class="signout" src="/assets/images/power-off.png" alt="" srcset=""></a>
+    <style>
+      .signout {
+        position: absolute;
+        bottom: -42.8rem;
+        width: 48px;
+        height: 46.55px;
+        background: url('/assets/images/power-off.png');
+      }
+    </style>
+    
+
   </div>
 </div>

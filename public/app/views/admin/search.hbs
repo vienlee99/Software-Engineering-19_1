@@ -1,29 +1,79 @@
 <div class="container">
 
-    <div class="sec-title">
-        <p id="title">Search</p>
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">
-                <img src="/assets/images/icon-search.png">
-            </span>
-            <input type="text" class="form-control" placeholder="FIND ITEMS" id="search">
+    <form id="formX">
+        <div class="box-radio">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="type" id="CourseR" value="course" checked>
+                <label class="form-check-label" for="CourseR">Course</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="type" id="TeacherR" value="teacher">
+                <label class="form-check-label" for="TeacherR">Teacher</label>
+            </div>
+            <script>
+                $("input[name=type]").change(function () {
+                    if (this.value == 'course') {
+                        $('#fram-1').css('display', 'contents')
+                        $('#fram-2').css('display', 'none')
+                    }
+                    else {
+                        $('#fram-1').css('display', 'none')
+                        $('#fram-2').css('display', 'contents')
+                    }
+                });
+            </script>
         </div>
-        <button id="btn-stat">Search</button>
-        <script>
-            var choose = $('#fram-1').css('display')!='none'?'course':'teacher';
-            $('#btn-stat').click(function (e) {
-                let form;
-                if (choose=='course') {
-                    document.getElementById()
-                    form = FormData()
-                }
-                // data.
-            })
-        </script>
-    </div>
+
+        <div class="sec-title">
+            <p id="title">Search</p>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">
+                    <img src="/assets/images/icon-search.png">
+                </span>
+                <input type="text" name="query" class="form-control" placeholder="FIND ITEMS" id="search">
+            </div>
+            <button id="btn-stat">Search</button>
+            <script>
+                var page = 1;
+                $('#btn-stat').click(function (e) {
+                    var choose = $("input[name=type][value='course']").is(':checked');
+                    e.preventDefault();
+                    let form;
+                    let formX = new FormData($('#formX').get(0));
+                    if (choose) {
+                        console.log('dsf')
+                        form = new FormData($('#form1').get(0));
+                    }
+                    else {
+
+                        form = new FormData($('#form2').get(0));
+                    }
+
+                    for (var pair of formX.entries())
+                        form.append(pair[0], pair[1]);
+                    form.append('page', page);
+
+                    for (var pair of form.entries())
+                        console.log(pair[0], pair[1]);
+
+                    $.ajax({
+                        type: "POST",
+                        url: '/search',
+                        data: form,
+                        success: function (data) {
+                            reloadTable(choose, data)
+                        },
+                        contentType: false,
+                        processData: false,
+                    });
+                })
+            </script>
+        </div>
+
+    </form>
 
     <form id="form1">
-        <div id="fram-1" style="display: none;">
+        <div id="fram-1" >
             <div id="main-content">
                 <table class="table">
                     <thead>
@@ -35,30 +85,7 @@
                             <th class="text-center">Action</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        {{#each courses}}
-                        <tr>
-                            <td>
-                                <img class="icon-sub" style="background-image: url(/assets/images/{{imgCourse}}.jpg)">
-                                {{name}}
-                            </td>
-                            <td>
-                                <img class="icon-tea"
-                                    style="background-image: url(/assets/images/{{imgTeacher}}.jpg);background-size: 67px">
-                                {{teacher}}
-                            </td>
-                            <td><img class="icon-status" src="/assets/images/active.png"></td>
-                            <td>{{date}}</td>
-                            <td>
-                                <div>
-                                    <img src="/assets/images/icon-action-info.png ">
-                                    <img src="/assets/images/icon-action-block.png ">
-                                    <img src="/assets/images/icon-action-delete_forever.png ">
-                                </div>
-                            </td>
-                        </tr>
-                        {{/each}}
-
+                    <tbody id="tableCourse">
 
                     </tbody>
                 </table>
@@ -66,45 +93,32 @@
 
             </div>
             <div class="box-sort">
-                <select class="form-select" aria-label="Default select example">
+                <select class="form-select" name="order">
                     <option selected style="display: none;">Sort by</option>
-                    <option value="1">Course</option>
-                    <option value="2">Teacher</option>
+                    <option value="1">Name</option>
+                    <option value="2">Rating</option>
                     <option value="3">Status</option>
-                    <option value="3">Date</option>
+                    <option value="4">Date start</option>
                 </select>
             </div>
-            <div class="box-radio">
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Course
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                    <label class="form-check-label" for="flexRadioDefault2">
-                        Teacher
-                    </label>
-                </div>
-            </div>
+
             <div class="box-select">
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <input class="form-check-input" type="checkbox" name="filter" value='Math'>
                     <label class="form-check-label" for="flexCheckDefault">
                         Math
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <input class="form-check-input" type="checkbox" name="filter" value='Physic'>
                     <label class="form-check-label" for="flexCheckDefault">
-                        Physics
+                        Physic
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <input class="form-check-input" type="checkbox" name="filter" value='Data Science'>
                     <label class="form-check-label" for="flexCheckDefault">
-                        AI
+                        Data Science
                     </label>
                 </div>
             </div>
@@ -112,7 +126,7 @@
     </form>
 
     <form id="form2">
-        <div id="fram-2">
+        <div id="fram-2" style="display: none;">
             <div id="main-content">
                 <table class="table">
                     <thead>
@@ -124,29 +138,7 @@
                             <th class="text-center">Action</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        {{#each teachers}}
-
-                        <tr>
-                            <td>
-                                <img class="icon-tea"
-                                    style="background-image: url(/assets/images/teacher1.jpg);background-size: 67px">
-                                {{name}}
-                            </td>
-                            <td class="text-center">{{rating}}</td>
-                            <td class="text-center">{{degree}}</td>
-                            <td class="text-center"><img class="icon-status" src="/assets/images/active.png"></td>
-                            <td>
-                                <div>
-                                    <img src="/assets/images/icon-action-info.png ">
-                                    <img src="/assets/images/icon-action-block.png ">
-                                    <img src="/assets/images/icon-action-delete_forever.png ">
-                                </div>
-                            </td>
-                        </tr>
-                        {{/each}}
-
-
+                    <tbody id="tableTeacher">
 
                     </tbody>
                 </table>
@@ -154,46 +146,32 @@
 
             </div>
             <div class="box-sort">
-                <select class="form-select" aria-label="Default select example">
+                <select class="form-select" name="order">
                     <option selected style="display: none;">Sort by</option>
                     <option value="1">Teacher name</option>
                     <option value="2">Rating</option>
                     <option value="3">University</option>
                     <option value="4">Status</option>
-
                 </select>
             </div>
-            <div class="box-radio">
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Course
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                    <label class="form-check-label" for="flexRadioDefault2">
-                        Teacher
-                    </label>
-                </div>
-            </div>
+
             <div class="box-select">
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <input class="form-check-input" type="checkbox" name="filter" value="ĐH BACHKHOA TPHCM">
                     <label class="form-check-label" for="flexCheckDefault">
-                        Math
+                        ĐH BACHKHOA TPHCM
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <input class="form-check-input" type="checkbox" name="filter" value="ĐH KHTN TPHCM">
                     <label class="form-check-label" for="flexCheckDefault">
-                        Physics
+                        ĐH KHTN TPHCM
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <input class="form-check-input" type="checkbox" name="filter" value="ĐH SPKT TPHCM">
                     <label class="form-check-label" for="flexCheckDefault">
-                        AI
+                        ĐH SPKT TPHCM
                     </label>
                 </div>
             </div>

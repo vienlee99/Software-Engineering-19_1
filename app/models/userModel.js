@@ -14,11 +14,11 @@ const UserSchema = new mongoose.Schema({
   },
   teacherId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "students",
+    ref: "Teacher",
   },
   studentId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "students",
+    ref: "Student",
   },
   mobilephone: {
     type: String,
@@ -46,7 +46,7 @@ const UserSchema = new mongoose.Schema({
     type: Boolean,
     default: true,
   },
-});
+},{ strict: false });
 
 const UserModel = mongoose.model("User", UserSchema);
 

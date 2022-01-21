@@ -32,12 +32,12 @@ const TeacherSchema = new mongoose.Schema({
   courseId: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "courses",
+      ref: "Course",
     },
   ],
   userId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "users",
+    ref: "User",
     required: true,
   },
 });

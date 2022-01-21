@@ -3,12 +3,12 @@ const mongoose = require("mongoose");
 const TransactionSchema = new mongoose.Schema({
   userId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "users",
+    ref: "User",
     required: true,
   },
   courseId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "courses",
+    ref: "Course",
     required: true,
   },
   value: {
@@ -24,7 +24,7 @@ const TransactionSchema = new mongoose.Schema({
     required: true,
     default: Date.now(),
   },
-});
+},{ strict: false });
 
 const TransactionModel = mongoose.model("Transaction", TransactionSchema);
 
