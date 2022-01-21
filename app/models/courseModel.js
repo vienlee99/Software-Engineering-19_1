@@ -13,6 +13,7 @@ const CourseSchema = new mongoose.Schema({
   date: {type: String, required: true,},
   numberOfStudent: {type: Number},
   deadDateEnroll: {type: Date},
+  image: {type: String, required: true},
   description: { type: String, required: true,},
   slug: { type: String, slug: 'name', unique: true },
 

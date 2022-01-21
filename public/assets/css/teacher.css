@@ -60,6 +60,8 @@
 
     .my-img{
       width: 100%;
+      height: fit-content;
+      min-height: 195px;
       max-height: 195px;
     }
 
@@ -73,4 +75,11 @@
 
     .btn-success{
       background-color: rgb(54, 190, 54);
+    }
+
+    .card-text{
+      min-height: 100px;
+      max-height: 100px;
+      overflow: hidden;
+      text-overflow:ellipsis;
     }
