@@ -27,23 +27,21 @@ class StudentPaymentController {
   async payment(req, res) {
     let { courseId, userId } = req.body;
     
-    let course = await coursesModel.findById(courseId);
-    let user = await userModel.findById(userId);
-    console.log(course, user);
-    //  console.log(course.cost)
+    let course = await coursesModel.findById(courseId).lean();
+    let user = await userModel.findById(userId).lean();
     if (user.remainningBalance < course.cost) {
-      console.log("?zzzzzzzz?");
-
       return res.send("Tài khoản không đủ đề thanh toán");
     }
-    console.log("?xxxxxxxxxxxxxxxx?");
 
     try {
       let a = await coursesModel.updateOne(
         { _id: courseId },
         { $push: { studentId: user.studentId } }
       );
-      console.log(a);
+      let b = await studentModel.updateOne(
+        { _id: user.studentId },
+        { $push: { coursetId: courseId } }
+      );
       res.send("thành công");
     } catch (error) {
       console.error(error, error.stack);

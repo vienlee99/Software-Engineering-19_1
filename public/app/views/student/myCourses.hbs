@@ -12,7 +12,10 @@ overflow-y:scroll;
 overflow-x:hidden;
 ">
 
-
+{{#if msg}}
+<div class="mb-5"></div>
+<h2>{{msg}}</h2>
+{{/if}}
   {{#each course}}
   <div style="position: relative;height: 160px;left: 0px;flex: none;order: 0;flex-grow: 0;">
     <img src="/assets/images/{{imagePath}}" alt="Math" style="position: absolute;height: 150px;left: 0px;top: 0px;" />
