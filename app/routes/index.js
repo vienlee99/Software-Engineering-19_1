@@ -22,18 +22,18 @@ const router = require("express").Router(),
 //   next();
 // });
 // zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
-router.use(function (req, res, next) {
-  req.session.user = {
-    _id: new mongoose.Types.ObjectId('61e41d50ad13e252ddde3242'),
-    username: "student1",
-    password: "$2b$10$Oin/4k5Euk8ItT4Gbmlk8OU7f47fBsjm1yRPFyE/Pe9Hl0rRjQjga", // 123456
-    mobilephone: "0812540149",
-    typeuserId: 2, // loại người dùng 0-admin 1-teacher 2-student
-    remainningBalance: 100000,
-    studentId: new mongoose.Types.ObjectId('61e41fe6ad13e252ddde3268'),
-  };
-  next();
-});
+// router.use(function (req, res, next) {
+//   req.session.user = {
+//     _id: new mongoose.Types.ObjectId('61e41d50ad13e252ddde3242'),
+//     username: "student1",
+//     password: "$2b$10$Oin/4k5Euk8ItT4Gbmlk8OU7f47fBsjm1yRPFyE/Pe9Hl0rRjQjga", // 123456
+//     mobilephone: "0812540149",
+//     typeuserId: 2, // loại người dùng 0-admin 1-teacher 2-student
+//     remainningBalance: 100000,
+//     studentId: new mongoose.Types.ObjectId('61e41fe6ad13e252ddde3268'),
+//   };
+//   next();
+// });
 // zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
 router.get("/signout", function (req, res, next) {
   req.session.user = null;
