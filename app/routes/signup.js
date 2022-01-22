@@ -11,7 +11,7 @@ router.get("/", (req, res) => {
 router.post("/", async (req, res) => {
   let r = await signupController.signup(req, res);  
   if (r.result) {
-    return res.redirect("/");
+    return res.redirect("back");
   } else {
     signupController.index(req, res, r.msg);
   }
